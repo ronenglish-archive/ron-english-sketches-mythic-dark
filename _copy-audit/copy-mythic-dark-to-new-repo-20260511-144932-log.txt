@@ -1,0 +1,133 @@
+[2026-05-11 14:49:32] Starting Mythic / Dark copy into new repo.
+[2026-05-11 14:49:32] Source repo: D:\github\ron-english-sketches-and-drawings
+[2026-05-11 14:49:32] Destination repo: D:\github\ron-english-sketches-mythic-dark
+[2026-05-11 14:49:32] Creating destination backup at: D:\github-backups\ron-english-sketches-and-drawings\copy-mythic-dark-to-new-repo-20260511-144932
+[2026-05-11 14:49:32] Copying Mythic / Dark page folders.
+[2026-05-11 14:49:32] Copying page folder: Sketches\brains
+[2026-05-11 14:49:32] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\brains
+[2026-05-11 14:49:32] Files found: 26
+[2026-05-11 14:49:32] Copying page folder: Sketches\kaijus
+[2026-05-11 14:49:32] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\kaijus
+[2026-05-11 14:49:32] Files found: 71
+[2026-05-11 14:49:32] Copying page folder: Sketches\kursed
+[2026-05-11 14:49:32] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\kursed
+[2026-05-11 14:49:32] Files found: 21
+[2026-05-11 14:49:32] Copying page folder: Sketches\light-cult
+[2026-05-11 14:49:32] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\light-cult
+[2026-05-11 14:49:32] Files found: 222
+[2026-05-11 14:49:33] Copying page folder: Sketches\mythical-beings
+[2026-05-11 14:49:33] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\mythical-beings
+[2026-05-11 14:49:33] Files found: 88
+[2026-05-11 14:49:33] Copying page folder: Sketches\skeletons
+[2026-05-11 14:49:33] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\skeletons
+[2026-05-11 14:49:33] Files found: 74
+[2026-05-11 14:49:33] Copying page folder: Sketches\tots
+[2026-05-11 14:49:33] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\tots
+[2026-05-11 14:49:33] Files found: 9
+[2026-05-11 14:49:33] Copying page folder: Sketches\yin-yangs
+[2026-05-11 14:49:33] Copying files from: D:\github\ron-english-sketches-and-drawings\Sketches\yin-yangs
+[2026-05-11 14:49:33] Files found: 11
+[2026-05-11 14:49:34] Copying Mythic / Dark image folders.
+[2026-05-11 14:49:34] Copying image folder: images\Sketches\brains
+[2026-05-11 14:49:34] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\brains
+[2026-05-11 14:49:34] Files found: 98
+[2026-05-11 14:49:34] Copying image folder: images\Sketches\Kaijus
+[2026-05-11 14:49:34] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Kaijus
+[2026-05-11 14:49:34] Files found: 304
+[2026-05-11 14:49:34] Copying image folder: images\Sketches\Kursed
+[2026-05-11 14:49:34] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Kursed
+[2026-05-11 14:49:34] Files found: 120
+[2026-05-11 14:49:35] Copying image folder: images\Sketches\Light Cult
+[2026-05-11 14:49:35] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Light Cult
+[2026-05-11 14:49:35] Files found: 269
+[2026-05-11 14:49:35] Copying image folder: images\Sketches\Mythical Beings
+[2026-05-11 14:49:35] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Mythical Beings
+[2026-05-11 14:49:35] Files found: 383
+[2026-05-11 14:49:36] Copying image folder: images\Sketches\Skeletons
+[2026-05-11 14:49:36] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Skeletons
+[2026-05-11 14:49:36] Files found: 297
+[2026-05-11 14:49:36] Copying image folder: images\Sketches\Tots
+[2026-05-11 14:49:36] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Tots
+[2026-05-11 14:49:36] Files found: 50
+[2026-05-11 14:49:36] Copying image folder: images\Sketches\Yin Yangs
+[2026-05-11 14:49:36] Copying files from: D:\github\ron-english-sketches-and-drawings\images\Sketches\Yin Yangs
+[2026-05-11 14:49:36] Files found: 50
+[2026-05-11 14:49:37] Copying shared CSS/JS folders if present.
+[2026-05-11 14:49:37] Copying files from: D:\github\ron-english-sketches-and-drawings\css
+[2026-05-11 14:49:37] Files found: 1
+[2026-05-11 14:49:37] Optional folder not found, skipping: D:\github\ron-english-sketches-and-drawings\js
+[2026-05-11 14:49:37] Creating root landing page.
+[2026-05-11 14:49:37] Wrote root landing page: D:\github\ron-english-sketches-mythic-dark\index.html
+[2026-05-11 14:49:37] Creating Sketches Mythic / Dark landing page.
+[2026-05-11 14:49:37] Wrote Sketches landing page: D:\github\ron-english-sketches-mythic-dark\Sketches\index.html
+[2026-05-11 14:49:37] Creating README.md.
+[2026-05-11 14:49:37] Updating navigation blocks.
+[2026-05-11 14:49:37] Updated nav in: Sketches\brains\brain-flower\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\celestials\moon-man\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\baby-mc-head\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\farting-mc\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\french-fry\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\grinning-mc\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\mc-big-bones\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\mc-star\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\mc-supersized\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\super-mc\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\tater-tot\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mc\young-mc\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\messiahs-and-deities\jesus-junior\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\multiple-faces\hurley-surfer\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\multiple-faces\judge-mental\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\multiple-faces\scream\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\multiple-faces\screamer\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\multiple-faces\trippy-double-face\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\40-year-old-fetus\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\adam-eve-and-money\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\artist\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\artist-gnome\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\bigfoot-fred\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\clown-in-car\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\corn-bob-farmer\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\cowboy-jumping-bean\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\cry-your-eyes-out\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\delivery-man\index.html
+[2026-05-11 14:49:41] Updated nav in: Sketches\mythical-beings\mythical-humans\firecracker-boy\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\freak-bro-ladymouth\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\king-kid\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\libtard-snowflake\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\libtard-snowflake-2\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\lucky\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\molotov-girl\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\ouch\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\speed-mcclean\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\the-orange-noser\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\uncle-sam\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\mythical-humans\uncle-scam\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-1\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-10\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-2\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-3\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-4\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-5\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-6\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-7\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-8\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\mythical-beings\santas\black-santa-9\index.html
+[2026-05-11 14:49:42] Updated nav in: Sketches\skeletons\lotus-skull\index.html
+[2026-05-11 14:49:43] Updated nav in: Sketches\tots\lil-tot\index.html
+[2026-05-11 14:49:43] Updated nav in: Sketches\tots\temper-pac\index.html
+[2026-05-11 14:49:43] Updated nav in: Sketches\tots\temper-tot\index.html
+[2026-05-11 14:49:43] Updated nav in: Sketches\yin-yangs\thinkman\index.html
+[2026-05-11 14:49:43] HTML files scanned for nav updates: 523
+[2026-05-11 14:49:43] HTML files changed for nav updates: 55
+[2026-05-11 14:49:43] Nav anchors updated: 103
+[2026-05-11 14:49:43] Nav anchors removed: 0
+[2026-05-11 14:49:43] Scanning for missing image references before auto-repair.
+[2026-05-11 14:49:45] Missing image references before auto-repair: 24
+[2026-05-11 14:49:45] Auto-copying repairable missing images from source repo.
+[2026-05-11 14:49:45] Auto-copied missing images: 0
+[2026-05-11 14:49:45] Scanning for remaining missing image references.
+[2026-05-11 14:49:46] Remaining possible missing image references: 24
+[2026-05-11 14:49:46] Checking internal page links.
+[2026-05-11 14:49:47] Possible missing internal page links found: 41
+[2026-05-11 14:49:47] Writing verification summary.
+[2026-05-11 14:49:47] Done.
