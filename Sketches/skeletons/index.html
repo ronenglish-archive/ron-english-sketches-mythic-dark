@@ -146,24 +146,112 @@
     }
   </style>
   <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
-<style id="ron-skeletons-format-standard-v1">.nav-pills,nav.ron-bottom-prev-next-center{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;text-align:center!important}.original-drawing-heading{text-align:center;margin:0 0 14px;font-size:1.4rem}.primary-artwork{max-width:920px;margin:0 auto 24px;padding:14px;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 26px rgba(0,0,0,.06);background:#fff;display:flex;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important;gap:14px}.primary-artwork-link{display:flex;flex:0 0 auto!important;width:100%!important;max-width:900px!important;justify-content:center;align-items:center;text-decoration:none}.primary-artwork-link img{display:block!important;width:100%!important;max-width:900px!important;height:460px!important;object-fit:contain!important;background:#f3f4f6;margin:0 auto}.original-grid{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important}.original-grid>.gallery-item{width:100%!important;max-width:900px!important;flex:0 0 auto!important}.original-grid>.gallery-item img{width:100%!important;max-width:900px!important;height:460px!important;object-fit:contain!important}.ron-notes-center,.ron-notes-center p,[data-role="notes"],[data-role="notes"] p,[data-sweep-section="notes"],[data-sweep-section="notes"] p{text-align:center!important}footer{text-align:center!important;margin-top:30px!important;padding-top:16px!important;border-top:1px solid #e5e7eb!important;color:#6b7280!important;font-size:14px!important}@media(max-width:620px){.primary-artwork-link{max-width:900px!important}.primary-artwork-link img,.original-grid>.gallery-item img{height:340px!important}}</style><style id="ron-skeletons-index-last-row-center-v1">
-/* Center incomplete rows on the Skeletons index. */
+<style id="ron-skeletons-format-standard-v1">.nav-pills,nav.ron-bottom-prev-next-center{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;text-align:center!important}.original-drawing-heading{text-align:center;margin:0 0 14px;font-size:1.4rem}.primary-artwork{max-width:920px;margin:0 auto 24px;padding:14px;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 26px rgba(0,0,0,.06);background:#fff;display:flex;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important;gap:14px}.primary-artwork-link{display:flex;flex:0 0 auto!important;width:100%!important;max-width:900px!important;justify-content:center;align-items:center;text-decoration:none}.primary-artwork-link img{display:block!important;width:100%!important;max-width:900px!important;height:460px!important;object-fit:contain!important;background:#f3f4f6;margin:0 auto}.original-grid{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important}.original-grid>.gallery-item{width:100%!important;max-width:900px!important;flex:0 0 auto!important}.original-grid>.gallery-item img{width:100%!important;max-width:900px!important;height:460px!important;object-fit:contain!important}.ron-notes-center,.ron-notes-center p,[data-role="notes"],[data-role="notes"] p,[data-sweep-section="notes"],[data-sweep-section="notes"] p{text-align:center!important}footer{text-align:center!important;margin-top:30px!important;padding-top:16px!important;border-top:1px solid #e5e7eb!important;color:#6b7280!important;font-size:14px!important}@media(max-width:620px){.primary-artwork-link{max-width:900px!important}.primary-artwork-link img,.original-grid>.gallery-item img{height:340px!important}}</style><style id="ron-skeletons-index-card-standard-v2">
+/* Canonical Skeletons catalogue index presentation. */
 .index-grid{
   display:flex!important;
   flex-wrap:wrap!important;
   justify-content:center!important;
   align-items:stretch!important;
   gap:18px!important;
+  margin-top:28px!important;
 }
-.index-grid>.gallery-item{
+
+.index-grid > .index-card{
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:column!important;
   flex:0 1 250px!important;
-  max-width:260px!important;
   width:100%!important;
+  max-width:260px!important;
+  min-width:0!important;
+  overflow:hidden!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  color:#111!important;
+  text-decoration:none!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.06)!important;
+  transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease!important;
 }
-@media(max-width:560px){
-  .index-grid>.gallery-item{
-    flex:1 1 100%!important;
+
+.index-grid > .index-card:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.10)!important;
+  border-color:#d1d5db!important;
+}
+
+.index-grid > .index-card:focus-visible{
+  outline:3px solid rgba(17,24,39,.22)!important;
+  outline-offset:3px!important;
+}
+
+.index-grid > .index-card > img{
+  display:block!important;
+  width:100%!important;
+  height:240px!important;
+  max-height:240px!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f3f4f6!important;
+  padding:8px!important;
+  border-bottom:1px solid #e5e7eb!important;
+  margin:0!important;
+}
+
+.index-grid > .index-card > .index-title{
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex:1 1 auto!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:66px!important;
+  margin:0!important;
+  padding:12px 14px 14px!important;
+  text-align:center!important;
+  font-size:16px!important;
+  line-height:1.35!important;
+  font-weight:600!important;
+}
+
+.index-grid .set-label{
+  display:block!important;
+  margin-top:4px!important;
+  color:#6b7280!important;
+  font-size:13px!important;
+  line-height:1.3!important;
+  font-weight:400!important;
+  text-align:center!important;
+}
+
+@media(max-width:900px){
+  .index-grid > .index-card{
+    flex-basis:calc(33.333% - 18px)!important;
+    max-width:300px!important;
+  }
+}
+
+@media(max-width:680px){
+  .index-grid > .index-card{
+    flex-basis:calc(50% - 12px)!important;
+    max-width:320px!important;
+  }
+  .index-grid > .index-card > img{
+    height:230px!important;
+    max-height:230px!important;
+  }
+}
+
+@media(max-width:440px){
+  .index-grid > .index-card{
+    flex-basis:100%!important;
     max-width:330px!important;
+  }
+  .index-grid > .index-card > img{
+    height:240px!important;
+    max-height:240px!important;
   }
 }
 </style>
