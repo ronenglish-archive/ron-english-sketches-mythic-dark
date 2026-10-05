@@ -294,6 +294,79 @@ section[data-role="notes"] p{
   }
 }
 </style>
+<style id="ron-light-cult-original-standard-width-v1">
+/* Light Cult located originals: enforce the catalogue standard width. */
+section.primary-artwork[data-role="original"]{
+  width:100%!important;
+  max-width:920px!important;
+  margin:0 auto 24px!important;
+  padding:14px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  flex-wrap:nowrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:14px!important;
+}
+section.primary-artwork[data-role="original"] .primary-artwork-link{
+  display:block!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+  max-width:900px!important;
+  margin:0 auto!important;
+}
+section.primary-artwork[data-role="original"] .primary-artwork-link img{
+  display:block!important;
+  width:100%!important;
+  max-width:900px!important;
+  height:460px!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  margin:0 auto!important;
+}
+
+/* Support Light Cult pages that use the gallery-grid original structure. */
+section[data-role="original-drawing"] .gallery-grid.original-grid{
+  display:flex!important;
+  flex-direction:column!important;
+  flex-wrap:nowrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:14px!important;
+}
+section[data-role="original-drawing"] .gallery-grid.original-grid > .gallery-item{
+  flex:0 0 auto!important;
+  width:100%!important;
+  max-width:900px!important;
+  margin:0 auto!important;
+}
+section[data-role="original-drawing"] .gallery-grid.original-grid > .gallery-item img{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  height:460px!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  margin:0!important;
+}
+
+@media(max-width:620px){
+  section.primary-artwork[data-role="original"]{
+    max-width:920px!important;
+    padding:14px!important;
+  }
+  section.primary-artwork[data-role="original"] .primary-artwork-link,
+  section[data-role="original-drawing"] .gallery-grid.original-grid > .gallery-item{
+    max-width:330px!important;
+  }
+  section.primary-artwork[data-role="original"] .primary-artwork-link img,
+  section[data-role="original-drawing"] .gallery-grid.original-grid > .gallery-item img{
+    height:340px!important;
+  }
+}
+</style>
 </head><body><main class="wrap">
 
 <nav class="nav-pills" aria-label="Site navigation"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../index.html">Light Cult</a><a class="nav-pill" href="../characters/index.html">&larr; Light Cult — Characters</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
