@@ -280,7 +280,7 @@ section[data-role="notes"] p{
 }
 </style>
 <style id="ron-light-cult-original-standard-width-v1">
-/* Light Cult located originals: enforce the catalogue standard width. */
+/* FINAL Light Cult Objects original-artwork standard. Keep this block last in <head>. */
 section.primary-artwork[data-role="original"]{
   width:100%!important;
   max-width:920px!important;
@@ -303,12 +303,14 @@ section.primary-artwork[data-role="original"] .primary-artwork-link{
 section.primary-artwork[data-role="original"] .primary-artwork-link img{
   display:block!important;
   width:100%!important;
-  max-width:900px!important;
+  max-width:none!important;
   height:460px!important;
   max-height:none!important;
   object-fit:contain!important;
   object-position:center center!important;
-  margin:0 auto!important;
+  background:#f3f4f6!important;
+  padding:6px!important;
+  margin:0!important;
 }
 section[data-role="original-drawing"] .gallery-grid.original-grid{
   display:flex!important;
@@ -332,6 +334,8 @@ section[data-role="original-drawing"] .gallery-grid.original-grid > .gallery-ite
   max-height:none!important;
   object-fit:contain!important;
   object-position:center center!important;
+  background:#f3f4f6!important;
+  padding:6px!important;
   margin:0!important;
 }
 @media(max-width:620px){
