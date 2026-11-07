@@ -1,38 +1,351 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brains | Sketches &amp; Drawings | Ron English Catalogue Raisonné</title><style>
-/* Approved compact drawing index and set-member grid: single clean stylesheet. */
-:root{--border:#e5e7eb;--muted:#6b7280;--panel:#f8fafc}
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#111;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
-.wrap{width:calc(100% - 36px);max-width:1100px;margin:0 auto;padding:26px 0 48px}
-.page-narrow{max-width:1100px}
-.nav-pills,.sequence-nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:20px auto;text-align:center}
-.nav-pill,.sequence-pill{display:inline-block;padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:#fff;color:#111;text-decoration:none;font-size:14px;line-height:1.4}
-.nav-pill:hover,.sequence-pill:hover{background:#f9fafb}
-.sequence-nav .sequence-spacer{display:none}
-.page-header{text-align:center;margin:0 auto 24px}
-.page-title{margin:0;font-size:clamp(2rem,4vw,3rem);line-height:1.1}
-.section-card{width:100%;margin:0 auto 24px;padding:22px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:0 8px 26px #0000000f}
-.section-card h2{text-align:center;margin:0 0 16px;font-size:1.35rem}
-.catalogue-meta-block,.relationship-note{max-width:900px;margin:0 auto 24px;text-align:center}
-.work-meta{list-style:none;padding:0;margin:0 auto;line-height:1.7}
-.relationship-note{padding:12px 16px;border:1px solid var(--border);border-radius:14px;background:#f9fafb}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{display:flex;flex:0 0 200px;width:200px;max-width:200px;min-width:0;flex-direction:column;align-items:stretch;overflow:hidden;background:#fff;color:inherit;text-decoration:none;text-align:center;border:1px solid var(--border);border-radius:12px;box-shadow:0 3px 12px #0000000b}
-.index-grid>.index-card:hover,.group-grid>.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid>.index-card>img,.group-grid>.group-card>img{display:block;width:100%;height:158px;max-width:100%;object-fit:contain;padding:8px;background:var(--panel);border-bottom:1px solid var(--border)}
-.index-grid .index-image{display:flex;align-items:center;justify-content:center;width:100%;height:158px;padding:8px;background:var(--panel);border-bottom:1px solid var(--border)}
-.index-grid .index-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
-.index-grid .card-title,.index-grid .index-title,.group-grid .label,.group-grid .card-title{display:block;margin:0;padding:10px 8px 12px;text-align:center;font-size:14px;font-weight:600;line-height:1.35;overflow-wrap:anywhere}
-.card-subtitle,.set-label{display:block;font-size:12px;font-weight:400;line-height:1.35;color:var(--muted);margin-top:4px}
-footer{text-align:center;margin:30px auto 0;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
-footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.section-card{padding:14px}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px;width:145px}.index-grid>.index-card>img,.group-grid>.group-card>img,.index-grid .index-image{height:140px}.index-grid .card-title,.index-grid .index-title,.group-grid .label,.group-grid .card-title{font-size:13px}}
-</style>
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Brains | Sketches &amp; Drawings | Ron English Catalogue Raisonn&eacute;
+  </title>
+  <style>
+   /* Page foundation */
+:root {
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --panel: #f8fafc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+.wrap {
+  width: calc(100% - 36px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 26px 0 48px;
+}
 
+/* Primary and sequence navigation */
+.nav-pills, .sequence-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  text-align: center;
+}
+.nav-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.nav-pill:hover { background: #f9fafb; }
 
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
-</head><body><main class="wrap">
-<nav class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
-</nav><header class="page-header"><h1 class="page-title">Brains</h1></header><section class="index-grid"><a class="index-card" href="entries/re-016081.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Boxing%20Glove%20COLOR.jpg" alt="Brain Boxing Glove" loading="lazy"><div class="card-title">Brain Boxing Glove</div></a><a class="index-card" href="sets/brain-boy.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Boy%20COLOR.jpg" alt="Brain Boy" loading="lazy"><div class="card-title">Brain Boy<div class="set-label">Set</div></div></a><a class="index-card" href="sets/brain-heart.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Heart%20back%20COLOR.jpg" alt="Brain Heart" loading="lazy"><div class="card-title">Brain Heart<div class="set-label">Set</div></div></a><a class="index-card" href="entries/re-014098.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Lightning%20ORIGINAL%20COLOR.jpg" alt="Brain Lightning" loading="lazy"><div class="card-title">Brain Lightning</div></a><a class="index-card" href="entries/re-013111.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/brains/Brain%20Smoke%20%28Bomb%20Brain%29%20COLOR.jpg?v=1" alt="Brain Smoke" loading="lazy"><div class="card-title">Brain Smoke</div></a><a class="index-card" href="sets/brain-thinker.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Thinker%20COLOR.jpg" alt="Brain Thinker" loading="lazy"><div class="card-title">Brain Thinker<div class="set-label">Set</div></div></a><a class="index-card" href="entries/re-016319.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20COLOR.jpg" alt="Brain Wave Surfer" loading="lazy"><div class="card-title">Brain Wave Surfer</div></a><a class="index-card" href="entries/re-013439-v.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Scan_20260612%20%2862%29.jpg?v=20260612b" alt="Brainchild" loading="lazy"><div class="card-title">Brainchild</div></a><a class="index-card" href="entries/re-012258.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/Brainer.jpg" alt="Brainer" loading="lazy"><div class="card-title">Brainer</div></a><a class="index-card" href="sets/brainiac.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/braniac%20ORIGINAL.jpg" alt="Brainiac" loading="lazy"><div class="card-title">Brainiac<div class="set-label">Set</div></div></a><a class="index-card" href="sets/brains.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Halves%20COLOR.jpg" alt="Brains" loading="lazy"><div class="card-title">Brains<div class="set-label">Set</div></div></a><a class="index-card" href="sets/brains-sketches.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260626%20%2833%29.jpg?v=20260626aa" alt="Brains Sketches" loading="lazy"><div class="card-title">Brains Sketches<div class="set-label">Set</div></div></a><a class="index-card" href="entries/re-017088.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260703%20(45).jpg?v=20260915-2015" alt="Buttbrain" loading="lazy"><div class="card-title">Buttbrain</div></a><a class="index-card" href="entries/re-017092.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260704%20(2).jpg?v=20260915-2015" alt="Buttbrain Duck" loading="lazy"><div class="card-title">Buttbrain Duck</div></a><a class="index-card" href="entries/re-016340.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Captain%20Curious%20COLOR.jpg" alt="Captain Curious" loading="lazy"><div class="card-title">Captain Curious</div></a><a class="index-card" href="entries/re-013363.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/celebrity-characters/Pepe%20the%20Frog/Pepe%20Brain%20COLOR.jpg" alt="Frog Brain 1" loading="lazy"><div class="card-title">Frog Brain 1</div></a><a class="index-card" href="entries/re-013365.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/celebrity-characters/Pepe%20the%20Frog/Pepe%20Brain%20Cloud%20Frog%20COLOR.jpg" alt="Frog Brain 2" loading="lazy"><div class="card-title">Frog Brain 2</div></a><a class="index-card" href="entries/re-014567.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260614%20%28129%29.jpg?v=20260619f" alt="Overthinker" loading="lazy"><div class="card-title">Overthinker</div></a><a class="index-card" href="entries/re-013555.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Paisley%20Brain%20COLOR.jpg" alt="Paisley Brain" loading="lazy"><div class="card-title">Paisley Brain</div></a><a class="index-card" href="sets/peace-love.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Peace%20%26%20Love%20colorway%204.jpg" alt="Peace &amp; Love" loading="lazy"><div class="card-title">Peace &amp; Love<div class="set-label">Set</div></div></a><a class="index-card" href="entries/re-016083.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Peace%20of%20Mind%20COLOR.jpg" alt="Peace of Mind" loading="lazy"><div class="card-title">Peace of Mind</div></a><a class="index-card" href="entries/re-016080.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Body%20and%20Mind%20ORIGINAL%20COLOR.jpg" alt="Sex Brain 1" loading="lazy"><div class="card-title">Sex Brain 1</div></a><a class="index-card" href="entries/re-013302.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Scan_20260611%20%2811%29.jpg?v=20260611i" alt="Sex Brain 2" loading="lazy"><div class="card-title">Sex Brain 2</div></a><a class="index-card" href="entries/re-014741.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Sin%20of%20Consciousness%20COLOR.jpg" alt="Sin of Consciousness" loading="lazy"><div class="card-title">Sin of Consciousness</div></a><a class="index-card" href="entries/re-014768.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Thinker%20on%20the%20Church%20Throne%20COLOR.jpg" alt="Thinker on the Church Throne" loading="lazy"><div class="card-title">Thinker on the Church Throne</div></a>
-<a class="index-card" href="entries/re-016320.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Voodoo%20Painting%20COLOR.jpg" alt="Voodoo" loading="lazy"><div class="card-title">Voodoo</div></a>
-</section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/other-birds/index.html">&larr; Previous: Birds</a><a class="nav-pill sequence-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/buzzards/index.html">Next: Buzzards &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
+/* Heading */
+.page-header { text-align: center; margin: 0 auto 24px; }
+.page-title { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+
+/* Artwork cards */
+.index-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  margin: 0 auto;
+}
+.index-card {
+  display: flex;
+  flex: 0 0 200px;
+  width: 200px;
+  max-width: 200px;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #0000000b;
+}
+.index-card:hover {
+  border-color: #c9ced5;
+  box-shadow: 0 5px 16px #00000014;
+}
+.index-card > img {
+  display: block;
+  width: 100%;
+  height: 158px;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 8px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.card-title {
+  display: block;
+  margin: 0;
+  padding: 10px 8px 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.set-label {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 30px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Compact screens */
+@media (max-width: 480px) {
+  .wrap { width: calc(100% - 24px); }
+  .index-grid { gap: 12px; }
+  .index-card { flex: 0 1 145px; max-width: 145px; width: 145px; }
+  .index-card > img { height: 140px; }
+  .card-title { font-size: 13px; }
+}
+  </style>
+  <link href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png" rel="icon" type="image/png"/>
+ </head>
+ <body>
+  <main class="wrap">
+   <nav class="nav-pills">
+    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">
+     Catalogue home
+    </a>
+    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">
+     Sketches &amp; Drawings
+    </a>
+    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">
+     Search Catalogue
+    </a>
+   </nav>
+   <header class="page-header">
+    <h1 class="page-title">
+     Brains
+    </h1>
+   </header>
+   <section class="index-grid">
+    <a class="index-card" href="entries/re-016081.html">
+     <img alt="Brain Boxing Glove" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Boxing%20Glove%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Boxing Glove
+     </div>
+    </a>
+    <a class="index-card" href="sets/brain-boy.html">
+     <img alt="Brain Boy" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Boy%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Boy
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="sets/brain-heart.html">
+     <img alt="Brain Heart" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Heart%20back%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Heart
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-014098.html">
+     <img alt="Brain Lightning" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Lightning%20ORIGINAL%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Lightning
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013111.html">
+     <img alt="Brain Smoke" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/brains/Brain%20Smoke%20%28Bomb%20Brain%29%20COLOR.jpg?v=1"/>
+     <div class="card-title">
+      Brain Smoke
+     </div>
+    </a>
+    <a class="index-card" href="sets/brain-thinker.html">
+     <img alt="Brain Thinker" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Thinker%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Thinker
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-016319.html">
+     <img alt="Brain Wave Surfer" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20COLOR.jpg"/>
+     <div class="card-title">
+      Brain Wave Surfer
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013439-v.html">
+     <img alt="Brainchild" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Scan_20260612%20%2862%29.jpg?v=20260612b"/>
+     <div class="card-title">
+      Brainchild
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-012258.html">
+     <img alt="Brainer" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/Brainer.jpg"/>
+     <div class="card-title">
+      Brainer
+     </div>
+    </a>
+    <a class="index-card" href="sets/brainiac.html">
+     <img alt="Brainiac" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/braniac%20ORIGINAL.jpg"/>
+     <div class="card-title">
+      Brainiac
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="sets/brains.html">
+     <img alt="Brains" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Halves%20COLOR.jpg"/>
+     <div class="card-title">
+      Brains
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="sets/brains-sketches.html">
+     <img alt="Brains Sketches" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260626%20%2833%29.jpg?v=20260626aa"/>
+     <div class="card-title">
+      Brains Sketches
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-017088.html">
+     <img alt="Buttbrain" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260703%20(45).jpg?v=20260915-2015"/>
+     <div class="card-title">
+      Buttbrain
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-017092.html">
+     <img alt="Buttbrain Duck" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260704%20(2).jpg?v=20260915-2015"/>
+     <div class="card-title">
+      Buttbrain Duck
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-016340.html">
+     <img alt="Captain Curious" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Captain%20Curious%20COLOR.jpg"/>
+     <div class="card-title">
+      Captain Curious
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013363.html">
+     <img alt="Frog Brain 1" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/celebrity-characters/Pepe%20the%20Frog/Pepe%20Brain%20COLOR.jpg"/>
+     <div class="card-title">
+      Frog Brain 1
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013365.html">
+     <img alt="Frog Brain 2" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/celebrity-characters/Pepe%20the%20Frog/Pepe%20Brain%20Cloud%20Frog%20COLOR.jpg"/>
+     <div class="card-title">
+      Frog Brain 2
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-014567.html">
+     <img alt="Overthinker" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260614%20%28129%29.jpg?v=20260619f"/>
+     <div class="card-title">
+      Overthinker
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013555.html">
+     <img alt="Paisley Brain" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Paisley%20Brain%20COLOR.jpg"/>
+     <div class="card-title">
+      Paisley Brain
+     </div>
+    </a>
+    <a class="index-card" href="sets/peace-love.html">
+     <img alt="Peace &amp; Love" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Peace%20%26%20Love%20colorway%204.jpg"/>
+     <div class="card-title">
+      Peace &amp; Love
+      <div class="set-label">
+       Set
+      </div>
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-016083.html">
+     <img alt="Peace of Mind" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Peace%20of%20Mind%20COLOR.jpg"/>
+     <div class="card-title">
+      Peace of Mind
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-016080.html">
+     <img alt="Sex Brain 1" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Body%20and%20Mind%20ORIGINAL%20COLOR.jpg"/>
+     <div class="card-title">
+      Sex Brain 1
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-013302.html">
+     <img alt="Sex Brain 2" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Scan_20260611%20%2811%29.jpg?v=20260611i"/>
+     <div class="card-title">
+      Sex Brain 2
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-014741.html">
+     <img alt="Sin of Consciousness" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Sin%20of%20Consciousness%20COLOR.jpg"/>
+     <div class="card-title">
+      Sin of Consciousness
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-014768.html">
+     <img alt="Thinker on the Church Throne" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Thinker%20on%20the%20Church%20Throne%20COLOR.jpg"/>
+     <div class="card-title">
+      Thinker on the Church Throne
+     </div>
+    </a>
+    <a class="index-card" href="entries/re-016320.html">
+     <img alt="Voodoo" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Voodoo%20Painting%20COLOR.jpg"/>
+     <div class="card-title">
+      Voodoo
+     </div>
+    </a>
+   </section>
+   <nav aria-label="Catalogue sequence" class="sequence-nav">
+    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/other-birds/index.html">
+     &larr; Previous: Birds
+    </a>
+    <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/buzzards/index.html">
+     Next: Buzzards &rarr;
+    </a>
+   </nav>
+   <footer>
+    Published via GitHub Pages
+    <br/>
+    for long-term public access.
+   </footer>
+  </main>
+ </body>
+</html>
+

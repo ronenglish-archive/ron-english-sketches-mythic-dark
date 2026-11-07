@@ -1,54 +1,212 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tots | Sketches &amp; Drawings | Ron English Catalogue Raisonn&eacute;</title>
-<style>
-/* Approved compact drawing index and set-member grid: single clean stylesheet. */
-:root{--border:#e5e7eb;--muted:#6b7280;--panel:#f8fafc}
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#111;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
-.wrap{width:calc(100% - 36px);max-width:1100px;margin:0 auto;padding:26px 0 48px}
-.page-narrow{max-width:1100px}
-.nav-pills,.sequence-nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:20px auto;text-align:center}
-.nav-pill,.sequence-pill{display:inline-block;padding:8px 14px;border:1px solid var(--border);border-radius:999px;background:#fff;color:#111;text-decoration:none;font-size:14px;line-height:1.4}
-.nav-pill:hover,.sequence-pill:hover{background:#f9fafb}
-.sequence-nav .sequence-spacer{display:none}
-.page-header{text-align:center;margin:0 auto 24px}
-.page-title{margin:0;font-size:clamp(2rem,4vw,3rem);line-height:1.1}
-.section-card{width:100%;margin:0 auto 24px;padding:22px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:0 8px 26px #0000000f}
-.section-card h2{text-align:center;margin:0 0 16px;font-size:1.35rem}
-.catalogue-meta-block,.relationship-note{max-width:900px;margin:0 auto 24px;text-align:center}
-.work-meta{list-style:none;padding:0;margin:0 auto;line-height:1.7}
-.relationship-note{padding:12px 16px;border:1px solid var(--border);border-radius:14px;background:#f9fafb}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{display:flex;flex:0 0 200px;width:200px;max-width:200px;min-width:0;flex-direction:column;align-items:stretch;overflow:hidden;background:#fff;color:inherit;text-decoration:none;text-align:center;border:1px solid var(--border);border-radius:12px;box-shadow:0 3px 12px #0000000b}
-.index-grid>.index-card:hover,.group-grid>.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid>.index-card>img,.group-grid>.group-card>img{display:block;width:100%;height:158px;max-width:100%;object-fit:contain;padding:8px;background:var(--panel);border-bottom:1px solid var(--border)}
-.index-grid .index-image{display:flex;align-items:center;justify-content:center;width:100%;height:158px;padding:8px;background:var(--panel);border-bottom:1px solid var(--border)}
-.index-grid .index-image img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}
-.index-grid .card-title,.index-grid .index-title,.group-grid .label,.group-grid .card-title{display:block;margin:0;padding:10px 8px 12px;text-align:center;font-size:14px;font-weight:600;line-height:1.35;overflow-wrap:anywhere}
-.card-subtitle,.set-label{display:block;font-size:12px;font-weight:400;line-height:1.35;color:var(--muted);margin-top:4px}
-footer{text-align:center;margin:30px auto 0;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
-footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.section-card{padding:14px}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px;width:145px}.index-grid>.index-card>img,.group-grid>.group-card>img,.index-grid .index-image{height:140px}.index-grid .card-title,.index-grid .index-title,.group-grid .label,.group-grid .card-title{font-size:13px}}
-</style>
-
-
-
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tots | Sketches &amp; Drawings | Ron English Catalogue Raisonné</title>
+  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+  <style>
+    :root {
+      --border: #e5e7eb;
+      --muted: #6b7280;
+      --image-background: #f8fafc;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #111;
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height: 1.5;
+    }
+    .wrap {
+      width: calc(100% - 36px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 26px 0 48px;
+    }
+    .nav-pills,
+    .sequence-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .nav-pill {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .nav-pill:hover {
+      background: #f9fafb;
+    }
+    .page-header {
+      text-align: center;
+      margin: 0 auto 24px;
+    }
+    .page-title {
+      margin: 0;
+      font-size: clamp(2rem,4vw,3rem);
+      line-height: 1.1;
+    }
+    .index-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 16px;
+      margin: 0 auto;
+    }
+    .index-card {
+      display: flex;
+      flex: 0 0 200px;
+      width: 200px;
+      max-width: 200px;
+      min-width: 0;
+      flex-direction: column;
+      align-items: stretch;
+      overflow: hidden;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #0000000b;
+    }
+    .index-card:hover {
+      border-color: #c9ced5;
+      box-shadow: 0 5px 16px #00000014;
+    }
+    .index-card > img {
+      display: block;
+      width: 100%;
+      height: 158px;
+      max-width: 100%;
+      object-fit: contain;
+      padding: 8px;
+      background: var(--image-background);
+      border-bottom: 1px solid var(--border);
+    }
+    .card-title {
+      display: block;
+      margin: 0;
+      padding: 10px 8px 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+    .card-subtitle {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+    footer {
+      text-align: center;
+      margin: 30px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      .wrap {
+        width: calc(100% - 24px);
+      }
+      .index-grid {
+        gap: 12px;
+      }
+      .index-card {
+        flex: 0 1 145px;
+        width: 145px;
+        max-width: 145px;
+      }
+      .index-card > img {
+        height: 140px;
+      }
+      .card-title {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
-<body><main class="wrap"><nav class="nav-pills" aria-label="Site navigation">
-<a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a>
-<a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a>
-  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
-</nav><header class="page-header"><h1 class="page-title">Tots</h1></header>
-<div class="index-grid"><a class="index-card" href="tantrum-tot/re-011783.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Tantrum%20Tot%202%20COLORED.jpg" alt="Tantrum Tot" loading="lazy"><div class="card-title">Tantrum Tot</div></a>
-<a class="index-card" href="tantrum-tot/re-017246.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Li%27l%20Tot%20COLOR.jpg" alt="Tantrum Tot Toddler" loading="lazy"><div class="card-title">Tantrum Tot Toddler</div></a>
-<a class="index-card" href="temper-pac/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Temper%20Pac%20COLOR.jpg" alt="Temper Pac" loading="lazy"><div class="card-title">Temper Pac</div></a>
-<a class="index-card" href="temper-tot-angry/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Temper%20Tot%20ORIGINAL%20COLOR%202.jpg" alt="Temper Tot Angry" loading="lazy"><div class="card-title">Temper Tot Angry</div></a>
-<a class="index-card" href="tot-toddler/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/character-groups-and-ensembles/Tot%20and%20Friends%20ORIGINAL%20COLOR.jpg" alt="Temper Tot Sitting" loading="lazy"><div class="card-title">Temper Tot Sitting</div></a>
-<a class="index-card" href="temper-tot/index.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/temper%20tot%20drawing%202.jpg?v=20260701p" alt="Temper Tot Sketches" loading="lazy"><div class="card-title">Temper Tot Sketches<span class="card-subtitle">Set</span></div></a>
-<a class="index-card" href="temper-tot-turnarounds/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/tot%201.jpg?v=20260606" alt="Temper Tot Turnaround" loading="lazy"><div class="card-title">Temper Tot Turnaround<span class="card-subtitle">Set</span></div></a>
-<a class="index-card" href="re-013919.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260920.jpg" alt="Texas Tantrum Toddler" loading="lazy"><div class="card-title">Texas Tantrum Toddler</div></a>
-<a class="index-card" href="texas-tantrum-tot/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Texas%20Tantrum%20Tot%20B%26W.jpg" alt="Texas Tantrum Tot" loading="lazy"><div class="card-title">Texas Tantrum Tot</div></a>
-<a class="index-card" href="tots/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/tots-icon.png" alt="Tots Family Icon" loading="lazy"><div class="card-title">Tots Family Icon</div></a>
-<a class="index-card" href="tots-logo/index.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Tots%20Icon%20COLOR.jpg" alt="Tots Logo" loading="lazy"><div class="card-title">Tots Logo</div></a></div><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/swine/index.html">&larr; Previous: Swine</a><a class="nav-pill sequence-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/turtles/index.html">Next: Turtles &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
+<body>
+  <main class="wrap">
+    <nav class="nav-pills" aria-label="Site navigation">
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
+    </nav>
+    <header class="page-header">
+      <h1 class="page-title">Tots</h1>
+    </header>
+    <div class="index-grid">
+      <a class="index-card" href="tantrum-tot/re-011783.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Tantrum%20Tot%202%20COLORED.jpg" alt="Tantrum Tot" loading="lazy">
+        <div class="card-title">Tantrum Tot</div>
+      </a>
+      <a class="index-card" href="tantrum-tot/re-017246.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Li%27l%20Tot%20COLOR.jpg" alt="Tantrum Tot Toddler" loading="lazy">
+        <div class="card-title">Tantrum Tot Toddler</div>
+      </a>
+      <a class="index-card" href="temper-pac/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Temper%20Pac%20COLOR.jpg" alt="Temper Pac" loading="lazy">
+        <div class="card-title">Temper Pac</div>
+      </a>
+      <a class="index-card" href="temper-tot-angry/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Temper%20Tot%20ORIGINAL%20COLOR%202.jpg" alt="Temper Tot Angry" loading="lazy">
+        <div class="card-title">Temper Tot Angry</div>
+      </a>
+      <a class="index-card" href="tot-toddler/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/character-groups-and-ensembles/Tot%20and%20Friends%20ORIGINAL%20COLOR.jpg" alt="Temper Tot Sitting" loading="lazy">
+        <div class="card-title">Temper Tot Sitting</div>
+      </a>
+      <a class="index-card" href="temper-tot/index.html">
+        <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/temper%20tot%20drawing%202.jpg?v=20260701p" alt="Temper Tot Sketches" loading="lazy">
+        <div class="card-title">Temper Tot Sketches<span class="card-subtitle">Set</span></div>
+      </a>
+      <a class="index-card" href="temper-tot-turnarounds/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/tot%201.jpg?v=20260606" alt="Temper Tot Turnaround" loading="lazy">
+        <div class="card-title">Temper Tot Turnaround<span class="card-subtitle">Set</span></div>
+      </a>
+      <a class="index-card" href="re-013919.html">
+        <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260920.jpg" alt="Texas Tantrum Toddler" loading="lazy">
+        <div class="card-title">Texas Tantrum Toddler</div>
+      </a>
+      <a class="index-card" href="texas-tantrum-tot/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Texas%20Tantrum%20Tot%20B%26W.jpg" alt="Texas Tantrum Tot" loading="lazy">
+        <div class="card-title">Texas Tantrum Tot</div>
+      </a>
+      <a class="index-card" href="tots/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/tots-icon.png" alt="Tots Family Icon" loading="lazy">
+        <div class="card-title">Tots Family Icon</div>
+      </a>
+      <a class="index-card" href="tots-logo/index.html">
+        <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Tots/Tots%20Icon%20COLOR.jpg" alt="Tots Logo" loading="lazy">
+        <div class="card-title">Tots Logo</div>
+      </a>
+    </div>
+    <nav class="sequence-nav" aria-label="Catalogue sequence">
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/swine/index.html">← Previous: Swine</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-animals/Sketches/turtles/index.html">Next: Turtles →</a>
+    </nav>
+    <footer>Published via GitHub Pages<br/>for long-term public access.</footer>
+  </main>
+</body>
+</html>
