@@ -2,97 +2,36 @@
 
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Object Mutations | Ron English Catalogue Raisonné</title>
 
-<style id="ron-standard-category-hub-style">
-:root{--border:#e5e7eb;--muted:#6b7280;--shadow:0 8px 26px rgba(0,0,0,.06);--panel:#f3f4f6}
+<style>
+/* Compact drawing category index - consolidated preview */
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#111;background:#fff}
-.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 56px}
-.nav-pills{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:20px 0;text-align:center}
-.nav-pill,.nav-pills a{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;color:#111;text-decoration:none;font-size:14px}
-.page-header{text-align:center;margin:0 auto 22px}
-.page-title{margin:0;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;line-height:1.05}
-.intro{max-width:900px;margin:0 auto 26px;text-align:center;color:var(--muted);line-height:1.6}
-.index-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:18px}
-.index-card{display:block;flex:0 1 300px;max-width:320px;width:100%;border:1px solid var(--border);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;background:#fff;box-shadow:var(--shadow)}
-.index-card img{display:block;width:100%;height:240px;max-height:240px;object-fit:contain;background:var(--panel);padding:6px}
-.card-title{padding:12px 14px 14px;text-align:center;font-weight:600;line-height:1.35}
-.set-label,.card-subtitle{display:block;margin-top:4px;color:var(--muted);font-size:13px;font-weight:400}
-.file-placeholder{height:240px;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--panel);color:var(--muted);padding:18px;font-weight:600}
-footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:14px;text-align:center}
-@media(max-width:700px){.index-card{flex-basis:320px;max-width:320px}.index-card img{height:260px;max-height:260px}}
-</style><style id="ron-catalogue-four-across-standard-v1">
-.index-grid,
-.gallery-grid,
-.category-grid,
-.subcategories-grid,
-.cards-grid{
-  display:flex!important;
-  flex-wrap:wrap!important;
-  justify-content:center!important;
-  align-items:stretch!important;
-  gap:18px!important;
-}
-.index-grid > .index-card,
-.index-grid > .gallery-item,
-.index-grid > .group-card,
-.gallery-grid > .index-card,
-.gallery-grid > .gallery-item,
-.gallery-grid > .group-card,
-.category-grid > .index-card,
-.category-grid > .gallery-item,
-.category-grid > .group-card,
-.subcategories-grid > .index-card,
-.subcategories-grid > .gallery-item,
-.subcategories-grid > .group-card,
-.cards-grid > .index-card,
-.cards-grid > .gallery-item,
-.cards-grid > .group-card{
-  box-sizing:border-box!important;
-  min-width:0!important;
-  flex:0 1 calc((100% - 54px) / 4)!important;
-  width:calc((100% - 54px) / 4)!important;
-  max-width:calc((100% - 54px) / 4)!important;
-}
-@media(max-width:900px){
-  .index-grid > .index-card,.index-grid > .gallery-item,.index-grid > .group-card,
-  .gallery-grid > .index-card,.gallery-grid > .gallery-item,.gallery-grid > .group-card,
-  .category-grid > .index-card,.category-grid > .gallery-item,.category-grid > .group-card,
-  .subcategories-grid > .index-card,.subcategories-grid > .gallery-item,.subcategories-grid > .group-card,
-  .cards-grid > .index-card,.cards-grid > .gallery-item,.cards-grid > .group-card{
-    flex-basis:calc((100% - 36px) / 3)!important;
-    width:calc((100% - 36px) / 3)!important;
-    max-width:calc((100% - 36px) / 3)!important;
-  }
-}
-@media(max-width:680px){
-  .index-grid > .index-card,.index-grid > .gallery-item,.index-grid > .group-card,
-  .gallery-grid > .index-card,.gallery-grid > .gallery-item,.gallery-grid > .group-card,
-  .category-grid > .index-card,.category-grid > .gallery-item,.category-grid > .group-card,
-  .subcategories-grid > .index-card,.subcategories-grid > .gallery-item,.subcategories-grid > .group-card,
-  .cards-grid > .index-card,.cards-grid > .gallery-item,.cards-grid > .group-card{
-    flex-basis:calc((100% - 18px) / 2)!important;
-    width:calc((100% - 18px) / 2)!important;
-    max-width:calc((100% - 18px) / 2)!important;
-  }
-}
-@media(max-width:440px){
-  .index-grid > .index-card,.index-grid > .gallery-item,.index-grid > .group-card,
-  .gallery-grid > .index-card,.gallery-grid > .gallery-item,.gallery-grid > .group-card,
-  .category-grid > .index-card,.category-grid > .gallery-item,.category-grid > .group-card,
-  .subcategories-grid > .index-card,.subcategories-grid > .gallery-item,.subcategories-grid > .group-card,
-  .cards-grid > .index-card,.cards-grid > .gallery-item,.cards-grid > .group-card{
-    flex-basis:100%!important;
-    width:100%!important;
-    max-width:100%!important;
-  }
-}
+body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+.wrap{max-width:1100px;width:calc(100% - 36px);margin:auto;padding:24px 0 42px}
+.nav-pills{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 28px;text-align:center}
+.nav-pill{display:inline-block;padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;color:#111;text-decoration:none;font:14px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
+.nav-pill:hover,.nav-pill:focus{background:#f3f4f6}
+.top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:4px 0 34px;font-size:14px}
+.top-nav a{color:inherit;text-decoration:none}.top-nav a:hover{text-decoration:underline}
+.catalogue-pill-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin:28px auto 42px}
+.catalogue-pill-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 28px;border:1px solid #d9dde2;border-radius:999px;color:inherit;text-decoration:none;font-size:18px}
+.page-header{text-align:center;margin:0 0 26px}.page-title{margin:0;font:500 clamp(30px,4vw,46px) Georgia,'Times New Roman',serif}
+.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch;margin:0 auto}
+.index-grid>.index-card,.group-grid>.group-card{flex:0 0 200px;max-width:200px;width:100%}
+.index-card,.group-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0000000b}
+.index-card:hover,.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
+.index-grid > .index-card > img{display:block;width:100%;height:158px;max-width:100%;max-height:158px;padding:8px;background:#f8fafc;object-fit:contain;border-bottom:1px solid #e5e7eb}
+.index-card > .card-title,.group-card .label{font:500 14px/1.35 Georgia,'Times New Roman',serif;padding:10px 8px 12px;margin:0;overflow-wrap:anywhere;text-align:center}
+.set-label{display:block;font:400 12px/1.35 Arial,Helvetica,sans-serif;color:#666;margin-top:4px}
+.group-card img{display:block;width:100%;height:158px;object-fit:contain;padding:8px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
+footer{text-align:center;margin-top:35px;padding-top:18px;border-top:1px solid #d8d8d8;color:#666;font-size:13px}footer a{color:inherit}
+@media(max-width:480px){.wrap{width:calc(100% - 24px)}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px}.index-grid > .index-card > img,.group-card img{height:140px;max-height:140px}.index-card > .card-title,.group-card .label{font-size:13px}}
+
+/* Existing catalogue relationship note, retained in consolidated style. */
+.project-note{max-width:900px;margin:0 auto 26px;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;text-align:center;line-height:1.6}
+.project-note a{color:inherit}
+
 </style>
-<style id="ron-kaiju-category-nav-standard-v1">nav.sequence-nav.ron-bottom-prev-next-center{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:12px!important;margin:28px auto 18px!important;text-align:center!important}nav.sequence-nav.ron-bottom-prev-next-center>a.nav-pill.sequence-pill{display:inline-block!important;flex:0 1 auto!important;padding:8px 14px!important;border:1px solid #e5e7eb!important;border-radius:999px!important;background:#fff!important;color:#111!important;text-decoration:none!important;font:400 14px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}nav.sequence-nav.ron-bottom-prev-next-center>a.nav-pill.sequence-pill:hover,nav.sequence-nav.ron-bottom-prev-next-center>a.nav-pill.sequence-pill:focus{background:#f9fafb!important}</style><style id="ron-standard-index-panel-v1">
-/* Approved Evil Monkeys-style outer index holder; scoped to this panel only. */
-section.ron-standard-index-panel{box-sizing:border-box;width:100%;max-width:none;margin:0 auto 24px;padding:22px;border:1px solid #e5e7eb;border-radius:18px;background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.06)}
-section.ron-standard-index-panel > .index-grid{width:100%}
-@media(max-width:600px){section.ron-standard-index-panel{padding:14px}}
-</style>
+
 <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
 </head><body><main class="wrap"><nav aria-label="Site navigation" class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../../index.html">← Kaijus</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
 </nav><header class="page-header"><h1 class="page-title">Object Mutations</h1></header><section class="section-card ron-standard-index-panel" data-role="index-listing"><div class="index-grid"><a class="index-card" href="../../works/re-016862.html"><img alt="Airborne" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/airborne.jpg"/><div class="card-title">Airborne</div></a><a class="index-card" href="../../works/re-012637.html"><img alt="Car Car" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/transportation/Car%20Car%20pen%20and%20ink%20ORIGINAL.jpg"/><div class="card-title">Car Car</div></a><a class="index-card" href="../../works/re-012636.html"><img alt="Freakmobile" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/character-groups-and-ensembles/Brain%20Hotrod%2014x17%20ORIGINAL.jpg"/><div class="card-title">Freakmobile</div></a><a class="index-card" href="../../works/re-016775--01.html"><img alt="Multiplug Illumina" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Multiplug%20Illumina.jpg"/><div class="card-title">Multiplug Illumina</div></a><a class="index-card" href="../../sets/noose-balloons.html"><img alt="Noose Balloons" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-animals/images/Sketches/kaiju/nooser%20ORIGINAL.jpg"/><div class="card-title">Noose Balloons<div class="set-label">Set</div></div></a><a class="index-card" href="../../works/re-016780.html"><img alt="Plug Family" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Plug%20Family%20ORIGINAL.jpg"/><div class="card-title">Plug Family</div></a><a class="index-card" href="../../works/re-016861.html"><img alt="Smooth Ride" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/smooth%20ride.jpg"/><div class="card-title">Smooth Ride</div></a></div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="../food-and-plant-hybrids/index.html">&larr; Previous: Food &amp; Plant Hybrids</a><a class="nav-pill sequence-pill" href="../reptilian-forms/index.html">Next: Reptilian Forms &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
