@@ -1,63 +1,249 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Light Cult - Body Parts | Ron English Catalogue Raisonn&eacute;</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Cult - Body Parts | Ron English Catalogue Raisonné</title>
+  <style>
+/* Foundation */
+:root {
+  --border: #e5e7eb;
+  --panel: #f8fafc;
+  --muted: #666;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+.wrap {
+  width: calc(100% - 36px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 0 42px;
+}
 
+/* Navigation */
+.nav-pills, .sequence-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.nav-pills { margin: 20px 0 28px; }
+.sequence-nav { margin: 28px 0 0; }
+.nav-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font: 14px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.nav-pill:hover, .nav-pill:focus { background: #f3f4f6; }
 
-<style>
-/* Compact drawing category index - consolidated preview */
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-.wrap{max-width:1100px;width:calc(100% - 36px);margin:auto;padding:24px 0 42px}
-.nav-pills{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 28px;text-align:center}
-.nav-pill{display:inline-block;padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;color:#111;text-decoration:none;font:14px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
-.nav-pill:hover,.nav-pill:focus{background:#f3f4f6}
-.top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:4px 0 34px;font-size:14px}
-.top-nav a{color:inherit;text-decoration:none}.top-nav a:hover{text-decoration:underline}
-.catalogue-pill-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin:28px auto 42px}
-.catalogue-pill-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 28px;border:1px solid #d9dde2;border-radius:999px;color:inherit;text-decoration:none;font-size:18px}
-.page-header{text-align:center;margin:0 0 26px}.page-title{margin:0;font:500 clamp(30px,4vw,46px) Georgia,'Times New Roman',serif}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{flex:0 0 200px;max-width:200px;width:100%}
-.index-card,.group-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0000000b}
-.index-card:hover,.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid > .index-card > img{display:block;width:100%;height:158px;max-width:100%;max-height:158px;padding:8px;background:#f8fafc;object-fit:contain;border-bottom:1px solid #e5e7eb}
-.index-card > .card-title,.group-card .label{font:500 14px/1.35 Georgia,'Times New Roman',serif;padding:10px 8px 12px;margin:0;overflow-wrap:anywhere;text-align:center}
-.set-label{display:block;font:400 12px/1.35 Arial,Helvetica,sans-serif;color:#666;margin-top:4px}
-.group-card img{display:block;width:100%;height:158px;object-fit:contain;padding:8px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
-footer{text-align:center;margin-top:35px;padding-top:18px;border-top:1px solid #d8d8d8;color:#666;font-size:13px}footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px}.index-grid > .index-card > img,.group-card img{height:140px;max-height:140px}.index-card > .card-title,.group-card .label{font-size:13px}}
+/* Heading */
+.page-header { margin: 0 0 26px; text-align: center; }
+.page-title {
+  margin: 0;
+  font: 500 clamp(30px, 4vw, 46px) Georgia, "Times New Roman", serif;
+}
 
-/* Existing catalogue relationship note, retained in consolidated style. */
-.project-note{max-width:900px;margin:0 auto 26px;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;text-align:center;line-height:1.6}
-.project-note a{color:inherit}
+/* Unified compact artwork cards */
+.index-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  margin: 0 auto;
+}
+.index-card {
+  display: flex;
+  flex: 0 0 200px;
+  flex-direction: column;
+  width: 200px;
+  max-width: 200px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 12px #0000000b;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+.index-card:hover {
+  border-color: #c9ced5;
+  box-shadow: 0 5px 16px #00000014;
+}
+.index-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 158px;
+  padding: 8px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+.index-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.index-title {
+  margin: 0;
+  padding: 10px 8px 12px;
+  overflow-wrap: anywhere;
+  font: 500 14px/1.35 Georgia, "Times New Roman", serif;
+  text-align: center;
+}
 
-</style>
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
-</head><body><main class="wrap">
+/* Footer */
+footer {
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid #d8d8d8;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
 
-<nav class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../index.html">&larr; Light Cult</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
-</nav>
-<header class="page-header"><h1 class="page-title">Light Cult &mdash; Body Parts</h1></header>
-<section class="section-card"><div class="index-grid">
-
-
-
-<a class="index-card" href="../works/re-016472.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/cataracts.jpg" alt="" loading="lazy"><div class="card-title">Cataracts</div></a>
-<a class="index-card" href="../works/re-016376.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/headless%20guy%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Charlie Body</div></a>
-<a class="index-card" href="../works/re-014846-1.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ear%20%20-%20B%26W%201.jpg" alt="" loading="lazy"><div class="card-title">Ear 1</div></a>
-<a class="index-card" href="../works/re-014846-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ear%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Ear 2</div></a>
-<a class="index-card" href="../works/re-016408.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/alien%20ear%20bulb.png?v=20260608h" alt="" loading="lazy"><div class="card-title">Earbulb</div></a>
-<a class="index-card" href="../works/re-014424-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/eyes%201.jpg" alt="" loading="lazy"><div class="card-title">Eyes 1</div></a>
-<a class="index-card" href="../works/re-014424-3.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/eyes%202.jpg" alt="" loading="lazy"><div class="card-title">Eyes 2</div></a>
-<a class="index-card" href="../works/re-015068-1.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/hamburger%20helper.jpg" alt="" loading="lazy"><div class="card-title">Hamburger Helper</div></a>
-<a class="index-card" href="../works/re-014844-1.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/snake%20skeleton%20%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Medusalight</div></a>
-<a class="index-card" href="../works/re-014842-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/nose%20bulb%20%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Nose Glow</div></a>
-
-<a class="index-card" href="../works/re-015068.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/lightcult.elements-26.jpg?v=20260915-2015" alt="" loading="lazy"><div class="card-title">Reaching for Heaven</div></a>
-<a class="index-card" href="../works/re-014826-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/space%20helment%20and%20heart%20ribs%20%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Ribcage Heart</div></a>
-<a class="index-card" href="../works/re-016448.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/skeleton%20%20-%20B%26W%20(2).jpg" alt="" loading="lazy"><div class="card-title">Ribulb</div></a>
-<a class="index-card" href="../works/re-015742.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2891%29.jpg?v=20260701j" alt="" loading="lazy"><div class="card-title">Torso Sketches</div></a>
-
-<a class="index-card" href="../works/re-015079-3.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/womantorso.jpg" alt="" loading="lazy"><div class="card-title">Woman Torso Sketch</div></a>
-</div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill" href="../characters/index.html">Next: Characters &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer>
-</main></body></html>
+@media (max-width: 480px) {
+  .wrap { width: calc(100% - 24px); }
+  .index-grid { gap: 12px; }
+  .index-card { flex: 0 1 145px; width: 145px; max-width: 145px; }
+  .index-image { height: 140px; }
+  .index-title { font-size: 13px; }
+}
+  </style>
+  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav-pills">
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/"> Catalogue home </a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/"> Sketches &amp; Drawings </a>
+      <a class="nav-pill" href="../index.html"> ← Light Cult </a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/"> Search Catalogue </a>
+    </nav>
+    <header class="page-header">
+      <h1 class="page-title">Light Cult — Body Parts</h1>
+    </header>
+    <section class="artwork-section">
+      <div class="index-grid">
+        <a class="index-card" href="../works/re-016472.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/cataracts.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Cataracts</div>
+        </a>
+        <a class="index-card" href="../works/re-016376.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/headless%20guy%20%20-%20B%26W1.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Charlie Body</div>
+        </a>
+        <a class="index-card" href="../works/re-014846-1.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ear%20%20-%20B%26W%201.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Ear 1</div>
+        </a>
+        <a class="index-card" href="../works/re-014846-2.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ear%20%20-%20B%26W1.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Ear 2</div>
+        </a>
+        <a class="index-card" href="../works/re-016408.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/alien%20ear%20bulb.png?v=20260608h" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Earbulb</div>
+        </a>
+        <a class="index-card" href="../works/re-014424-2.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/eyes%201.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Eyes 1</div>
+        </a>
+        <a class="index-card" href="../works/re-014424-3.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/eyes%202.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Eyes 2</div>
+        </a>
+        <a class="index-card" href="../works/re-015068-1.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/hamburger%20helper.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Hamburger Helper</div>
+        </a>
+        <a class="index-card" href="../works/re-014844-1.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/snake%20skeleton%20%20-%20B%26W.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Medusalight</div>
+        </a>
+        <a class="index-card" href="../works/re-014842-2.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/nose%20bulb%20%20-%20B%26W.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Nose Glow</div>
+        </a>
+        <a class="index-card" href="../works/re-015068.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/lightcult.elements-26.jpg?v=20260915-2015" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Reaching for Heaven</div>
+        </a>
+        <a class="index-card" href="../works/re-014826-2.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/space%20helment%20and%20heart%20ribs%20%20-%20B%26W.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Ribcage Heart</div>
+        </a>
+        <a class="index-card" href="../works/re-016448.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/skeleton%20%20-%20B%26W%20(2).jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Ribulb</div>
+        </a>
+        <a class="index-card" href="../works/re-015742.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2891%29.jpg?v=20260701j" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Torso Sketches</div>
+        </a>
+        <a class="index-card" href="../works/re-015079-3.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/womantorso.jpg" alt="" loading="lazy">
+          </div>
+          <div class="index-title">Woman Torso Sketch</div>
+        </a>
+      </div>
+    </section>
+    <nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence">
+      <a class="nav-pill" href="../characters/index.html"> Next: Characters → </a>
+    </nav>
+    <footer>
+      Published via GitHub Pages<br>
+      for long-term public access.
+    </footer>
+  </main>
+</body>
+</html>

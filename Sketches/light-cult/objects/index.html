@@ -1,115 +1,199 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Light Cult - Objects | Ron English Catalogue Raisonn&eacute;</title>
-
-
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Light Cult - Objects | Ron English Catalogue Raisonné</title>
 <style>
-/* Compact drawing category index - consolidated preview */
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-.wrap{max-width:1100px;width:calc(100% - 36px);margin:auto;padding:24px 0 42px}
-.nav-pills{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 28px;text-align:center}
-.nav-pill{display:inline-block;padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;color:#111;text-decoration:none;font:14px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
-.nav-pill:hover,.nav-pill:focus{background:#f3f4f6}
-.top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:4px 0 34px;font-size:14px}
-.top-nav a{color:inherit;text-decoration:none}.top-nav a:hover{text-decoration:underline}
-.catalogue-pill-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin:28px auto 42px}
-.catalogue-pill-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 28px;border:1px solid #d9dde2;border-radius:999px;color:inherit;text-decoration:none;font-size:18px}
-.page-header{text-align:center;margin:0 0 26px}.page-title{margin:0;font:500 clamp(30px,4vw,46px) Georgia,'Times New Roman',serif}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{flex:0 0 200px;max-width:200px;width:100%}
-.index-card,.group-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0000000b}
-.index-card:hover,.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid > .index-card > img{display:block;width:100%;height:158px;max-width:100%;max-height:158px;padding:8px;background:#f8fafc;object-fit:contain;border-bottom:1px solid #e5e7eb}
-.index-card > .card-title,.group-card .label{font:500 14px/1.35 Georgia,'Times New Roman',serif;padding:10px 8px 12px;margin:0;overflow-wrap:anywhere;text-align:center}
-.set-label{display:block;font:400 12px/1.35 Arial,Helvetica,sans-serif;color:#666;margin-top:4px}
-.group-card img{display:block;width:100%;height:158px;object-fit:contain;padding:8px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
-footer{text-align:center;margin-top:35px;padding-top:18px;border-top:1px solid #d8d8d8;color:#666;font-size:13px}footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px}.index-grid > .index-card > img,.group-card img{height:140px;max-height:140px}.index-card > .card-title,.group-card .label{font-size:13px}}
-
-/* Existing catalogue relationship note, retained in consolidated style. */
-.project-note{max-width:900px;margin:0 auto 26px;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;text-align:center;line-height:1.6}
-.project-note a{color:inherit}
-
+/* Light Cult — Objects: unified compact index stylesheet. */
+:root {
+  --border: #e5e7eb;
+  --panel: #f8fafc;
+  --muted: #666;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #171717;
+  font: 16px/1.5 Arial, Helvetica, sans-serif;
+}
+.wrap {
+  width: calc(100% - 36px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 0 42px;
+}
+.nav-pills, .sequence-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto 28px;
+  text-align: center;
+}
+.nav-pill {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font: 14px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.nav-pill:hover, .nav-pill:focus-visible { background: #f3f4f6; }
+.page-header { margin: 0 0 26px; text-align: center; }
+.page-title {
+  margin: 0;
+  font: 500 clamp(30px, 4vw, 46px) Georgia, "Times New Roman", serif;
+}
+.index-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 16px;
+  margin: 0 auto;
+}
+.index-card {
+  display: flex;
+  flex: 0 0 200px;
+  flex-direction: column;
+  width: 200px;
+  max-width: 200px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 3px 12px #0000000b;
+}
+.index-card:hover {
+  border-color: #c9ced5;
+  box-shadow: 0 5px 16px #00000014;
+}
+.index-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 158px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+.index-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.index-title {
+  display: block;
+  margin: 0;
+  padding: 10px 8px 12px;
+  font: 500 14px/1.35 Georgia, "Times New Roman", serif;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.set-label {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font: 400 12px/1.35 Arial, Helvetica, sans-serif;
+}
+footer {
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid #d8d8d8;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+footer a { color: inherit; }
+@media (max-width: 480px) {
+  .wrap { width: calc(100% - 24px); }
+  .index-grid { gap: 12px; }
+  .index-card { flex: 0 1 145px; width: 145px; max-width: 145px; }
+  .index-image { height: 140px; }
+  .index-title { font-size: 13px; }
+}
 </style>
-
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+<link href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png" rel="icon" type="image/png"/>
 </head><body><main class="wrap">
-
-<nav class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../index.html">&larr; Light Cult</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
+<nav class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../index.html">← Light Cult</a> <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
 </nav>
-<header class="page-header"><h1 class="page-title">Light Cult &mdash; Objects</h1></header>
+<header class="page-header"><h1 class="page-title">Light Cult — Objects</h1></header>
 <section class="section-card"><div class="index-grid">
-<a class="index-card" href="../works/re-015044.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2857%29l.jpg?v=20260701e" alt="" loading="lazy"><div class="card-title">Baby Bottle Sketch</div></a>
-<a class="index-card" href="../works/re-014094.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/lightbulb.jpg" alt="" loading="lazy"><div class="card-title">Banana Bulb</div></a>
-<a class="index-card" href="../works/re-015019.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2860%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Banana Peel</div></a>
-<a class="index-card" href="../works/re-014401-r.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2852%29.jpg?v=20260618a" alt="" loading="lazy"><div class="card-title">Bigger Than Me Sketch</div></a>
-<a class="index-card" href="../works/re-015079-1.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bombit.jpg" alt="" loading="lazy"><div class="card-title">Bombit Sketch</div></a>
-<a class="index-card" href="../works/re-015051-1.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/bowling%20pin%20and%20balls.jpg" alt="" loading="lazy"><div class="card-title">Bowling Pin and Balls</div></a>
-<a class="index-card" href="../works/re-015051-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20%26%20rolling%20pin%20part_b%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Bowling Pin Bulb</div></a>
-<a class="index-card" href="../works/re-015060.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%28104%29yt.jpg?v=20260701m" alt="" loading="lazy"><div class="card-title">Bulb Sketch 1</div></a>
-<a class="index-card" href="../works/re-015079-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bulbsketch3.jpg" alt="" loading="lazy"><div class="card-title">Bulb Sketch 3</div></a>
-<a class="index-card" href="../works/re-016382.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20mirror%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Bulba</div></a>
-<a class="index-card" href="../works/re-015018-1.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/bulbhat.jpg" alt="" loading="lazy"><div class="card-title">Bulbhat</div></a>
-<a class="index-card" href="../works/re-016469.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/convertiblecar-01.jpg" alt="" loading="lazy"><div class="card-title">Bulbmobile</div></a>
-<a class="index-card" href="../works/re-015067-1.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bulbque.jpg" alt="" loading="lazy"><div class="card-title">Bulbque</div></a>
-<a class="index-card" href="../works/re-014826-1.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20mirror%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Bulbulb</div></a>
-<a class="index-card" href="../works/re-014843.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/burner%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Burner</div></a>
-<a class="index-card" href="../works/re-014817.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/drink%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Chalice</div></a>
-<a class="index-card" href="../works/re-015065.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%28101%29.jpg?v=20260701l" alt="" loading="lazy"><div class="card-title">Cone</div></a>
-<a class="index-card" href="../works/re-014041--02.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/connected%20bulbs.jpg" alt="Connected Bulbs" loading="lazy"><div class="card-title">Connected Bulbs</div></a>
-<a class="index-card" href="../works/re-015029.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2850%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Direction Sketches</div></a>
-<a class="index-card" href="../works/re-016796.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/double%20bulb.jpg" alt="" loading="lazy"><div class="card-title">Double Bulb</div></a>
-<a class="index-card" href="../works/re-015069.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2886%29.jpg?v=20260701j" alt="" loading="lazy"><div class="card-title">Double Cream</div></a>
-<a class="index-card" href="../works/re-015838.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/furniture-fixtures-and-appliances/dripping%20fawcet.jpg" alt="" loading="lazy"><div class="card-title">Dripping Fawcet</div></a>
-<a class="index-card" href="../works/re-015052.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260624%20%286%29.jpg?v=20260624b" alt="" loading="lazy"><div class="card-title">Fawcet</div></a>
-<a class="index-card" href="../works/re-015070-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/fezhat.jpg" alt="" loading="lazy"><div class="card-title">Fezhat</div></a>
-<a class="index-card" href="../works/re-014832-4.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/joint%20bulbs%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Fused Bulb Sketch</div></a>
-
-<a class="index-card" href="../works/re-015778.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/badges-and-patches/lightbulb-grenade-patch-28.jpg" alt="" loading="lazy"><div class="card-title">Grenade Bulb Patch Variations</div></a>
-<a class="index-card" href="../works/re-015870.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/musical-instruments-and-entertainment/bulb%20guitar.jpg" alt="" loading="lazy"><div class="card-title">Guitar</div></a>
-<a class="index-card" href="../works/re-016416.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ball%20machine%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Gumball Machine</div></a>
-<a class="index-card" href="../works/re-014813-1.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/hammer%20%20-%20B%26W%201.jpg" alt="" loading="lazy"><div class="card-title">Hammer</div></a>
-<a class="index-card" href="../works/re-014815.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/helicopter%20bulb%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Helicopter Bulb</div></a>
-<a class="index-card" href="../works/re-016421.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/helmet%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Helmet</div></a>
-<a class="index-card" href="../works/re-014802.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20hook%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Hook Bulb</div></a>
-<a class="index-card" href="../works/re-016366.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/hot%20air%20balloon%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Hot Air Balloon</div></a>
-<a class="index-card" href="../works/re-013967.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/wheel%20bulb%20%20-%20B%26W%20.jpg" alt="" loading="lazy"><div class="card-title">Hot Watt</div></a>
-<a class="index-card" href="../works/re-014832-1.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/inverse%20bulbs%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Inverse Bulbs Sketch 1</div></a>
-<a class="index-card" href="../works/re-014832-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Inverse%20Bulbs%20sketch%202.jpg" alt="" loading="lazy"><div class="card-title">Inverse Bulbs Sketch 2</div></a>
-<a class="index-card" href="../works/re-014832-3.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Inverse%20Bulbs%20sketch%203.jpg" alt="" loading="lazy"><div class="card-title">Inverse Bulbs Sketch 3</div></a>
-<a class="index-card" href="../sets/set-re-014811-v.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/Lamp%20right%20%20-%20B%26W%201.jpg" alt="" loading="lazy"><div class="card-title">Lamp<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../works/re-016380.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20drawing.jpg" alt="" loading="lazy"><div class="card-title">Light Bulb 1</div></a>
-<a class="index-card" href="../works/re-016797.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Light Bulb 2</div></a>
-<a class="index-card" href="../works/re-016798.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/plain%20bulb%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Light Bulb 3</div></a>
-<a class="index-card" href="../works/re-013478.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/lighting-electricity-and-lamps/light%20bulb%20grenade.jpg" alt="" loading="lazy"><div class="card-title">Light Bulb Grenade</div></a>
-<a class="index-card" href="../works/re-015026.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2867%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Light Cult Hats</div></a>
-<a class="index-card" href="../works/re-015032-r.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2854%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Light Cult Sketch 1</div></a>
-<a class="index-card" href="../works/re-014569-r.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2846%29.jpg?v=20260619g" alt="" loading="lazy"><div class="card-title">Light Cult Sketch 2</div></a>
-<a class="index-card" href="../works/re-015018-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Light%20Scepter.jpg" alt="" loading="lazy"><div class="card-title">Light Scepter</div></a>
-<a class="index-card" href="../works/re-016379.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Lightning%20Bulb%20ORIGINAL%20COLOR.jpg" alt="" loading="lazy"><div class="card-title">Lightning Brain</div></a>
-<a class="index-card" href="../works/re-015082-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/lightninger.jpg" alt="" loading="lazy"><div class="card-title">Lightninger Sketch</div></a>
-<a class="index-card" href="../works/re-016415.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20grenade%20%20-%20B%26W1.jpg" alt="" loading="lazy"><div class="card-title">Lumenade</div></a>
-<a class="index-card" href="../works/re-015042.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/pacifier%20%20-%20B%26W%20.jpg" alt="" loading="lazy"><div class="card-title">Pacifier 1</div></a>
-<a class="index-card" href="../works/re-015046.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2868%29gh.jpg?v=20260701e" alt="" loading="lazy"><div class="card-title">Pacifier 2</div></a>
-
-
-<a class="index-card" href="../works/re-015058-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/gun%20%20-%20B%26W%201.jpg" alt="" loading="lazy"><div class="card-title">Revolver</div></a>
-<a class="index-card" href="../works/re-015020.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/shoe%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Shoe</div></a>
-<a class="index-card" href="../works/re-015047.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2861%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Storm Cloud</div></a>
-
-<a class="index-card" href="../works/re-015030.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/sword%20and%20shield%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Sword and Shield</div></a>
-
-<a class="index-card" href="../works/re-015051-3.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/tank%20%20-%20B%26W%20.jpg" alt="" loading="lazy"><div class="card-title">Tank</div></a>
-<a class="index-card" href="../works/re-015073.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/Thick-line%20bulb.jpg" alt="" loading="lazy"><div class="card-title">Thick-Line Bulb</div></a>
-<a class="index-card" href="../works/re-014392.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/machine%20%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Tractorbulb</div></a>
-<a class="index-card" href="../works/re-016413.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2848%29.jpg?v=20260618a" alt="" loading="lazy"><div class="card-title">Triple Watt</div></a>
-<a class="index-card" href="../works/re-014816.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/trophy.jpg" alt="" loading="lazy"><div class="card-title">Trophy</div></a>
-<a class="index-card" href="../works/re-014813-2.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20trumpet%20%20%20-%20B%26W%201.jpg" alt="" loading="lazy"><div class="card-title">Trumpet</div></a>
-<a class="index-card" href="../works/re-014816-trumpet.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/Trumpet%20%20-%20B%26W.jpg" alt="" loading="lazy"><div class="card-title">Trumpet</div></a>
-<a class="index-card" href="../works/re-015067-2.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/udder%20bulb.jpg" alt="" loading="lazy"><div class="card-title">Udder Bulb</div></a>
-<a class="index-card" href="../works/re-015871.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/musical-instruments-and-entertainment/bulb%20ukelele.jpg" alt="" loading="lazy"><div class="card-title">Ukelele</div></a>
-<a class="index-card" href="../works/re-016370.html"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/mandala_elements-09%20(1).jpg" alt="" loading="lazy"><div class="card-title">Unicycle</div></a>
-<a class="index-card" href="../works/re-015021.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2862%29.jpg?v=20260701d" alt="" loading="lazy"><div class="card-title">Volkswattgen</div></a>
-</div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill" href="../characters/index.html">&larr; Previous: Characters</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer>
+<a class="index-card" href="../works/re-015044.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2857%29l.jpg?v=20260701e"/></div><div class="index-title">Baby Bottle Sketch</div></a>
+<a class="index-card" href="../works/re-014094.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/lightbulb.jpg"/></div><div class="index-title">Banana Bulb</div></a>
+<a class="index-card" href="../works/re-015019.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2860%29.jpg?v=20260701d"/></div><div class="index-title">Banana Peel</div></a>
+<a class="index-card" href="../works/re-014401-r.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2852%29.jpg?v=20260618a"/></div><div class="index-title">Bigger Than Me Sketch</div></a>
+<a class="index-card" href="../works/re-015079-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bombit.jpg"/></div><div class="index-title">Bombit Sketch</div></a>
+<a class="index-card" href="../works/re-015051-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/bowling%20pin%20and%20balls.jpg"/></div><div class="index-title">Bowling Pin and Balls</div></a>
+<a class="index-card" href="../works/re-015051-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20%26%20rolling%20pin%20part_b%20%20-%20B%26W1.jpg"/></div><div class="index-title">Bowling Pin Bulb</div></a>
+<a class="index-card" href="../works/re-015060.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%28104%29yt.jpg?v=20260701m"/></div><div class="index-title">Bulb Sketch 1</div></a>
+<a class="index-card" href="../works/re-015079-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bulbsketch3.jpg"/></div><div class="index-title">Bulb Sketch 3</div></a>
+<a class="index-card" href="../works/re-016382.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20mirror%20%20-%20B%26W1.jpg"/></div><div class="index-title">Bulba</div></a>
+<a class="index-card" href="../works/re-015018-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/bulbhat.jpg"/></div><div class="index-title">Bulbhat</div></a>
+<a class="index-card" href="../works/re-016469.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/convertiblecar-01.jpg"/></div><div class="index-title">Bulbmobile</div></a>
+<a class="index-card" href="../works/re-015067-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/bulbque.jpg"/></div><div class="index-title">Bulbque</div></a>
+<a class="index-card" href="../works/re-014826-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20mirror%20%20-%20B%26W1.jpg"/></div><div class="index-title">Bulbulb</div></a>
+<a class="index-card" href="../works/re-014843.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/burner%20%20-%20B%26W1.jpg"/></div><div class="index-title">Burner</div></a>
+<a class="index-card" href="../works/re-014817.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/drink%20%20-%20B%26W1.jpg"/></div><div class="index-title">Chalice</div></a>
+<a class="index-card" href="../works/re-015065.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%28101%29.jpg?v=20260701l"/></div><div class="index-title">Cone</div></a>
+<a class="index-card" href="../works/re-014041--02.html"><div class="index-image"><img alt="Connected Bulbs" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/connected%20bulbs.jpg"/></div><div class="index-title">Connected Bulbs</div></a>
+<a class="index-card" href="../works/re-015029.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2850%29.jpg?v=20260701d"/></div><div class="index-title">Direction Sketches</div></a>
+<a class="index-card" href="../works/re-016796.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/double%20bulb.jpg"/></div><div class="index-title">Double Bulb</div></a>
+<a class="index-card" href="../works/re-015069.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2886%29.jpg?v=20260701j"/></div><div class="index-title">Double Cream</div></a>
+<a class="index-card" href="../works/re-015838.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/furniture-fixtures-and-appliances/dripping%20fawcet.jpg"/></div><div class="index-title">Dripping Fawcet</div></a>
+<a class="index-card" href="../works/re-015052.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260624%20%286%29.jpg?v=20260624b"/></div><div class="index-title">Fawcet</div></a>
+<a class="index-card" href="../works/re-015070-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/fezhat.jpg"/></div><div class="index-title">Fezhat</div></a>
+<a class="index-card" href="../works/re-014832-4.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/joint%20bulbs%20%20-%20B%26W1.jpg"/></div><div class="index-title">Fused Bulb Sketch</div></a>
+<a class="index-card" href="../works/re-015778.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/badges-and-patches/lightbulb-grenade-patch-28.jpg"/></div><div class="index-title">Grenade Bulb Patch Variations</div></a>
+<a class="index-card" href="../works/re-015870.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/musical-instruments-and-entertainment/bulb%20guitar.jpg"/></div><div class="index-title">Guitar</div></a>
+<a class="index-card" href="../works/re-016416.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/ball%20machine%20%20-%20B%26W1.jpg"/></div><div class="index-title">Gumball Machine</div></a>
+<a class="index-card" href="../works/re-014813-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/hammer%20%20-%20B%26W%201.jpg"/></div><div class="index-title">Hammer</div></a>
+<a class="index-card" href="../works/re-014815.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/helicopter%20bulb%20%20-%20B%26W1.jpg"/></div><div class="index-title">Helicopter Bulb</div></a>
+<a class="index-card" href="../works/re-016421.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/helmet%20%20-%20B%26W1.jpg"/></div><div class="index-title">Helmet</div></a>
+<a class="index-card" href="../works/re-014802.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20hook%20%20-%20B%26W1.jpg"/></div><div class="index-title">Hook Bulb</div></a>
+<a class="index-card" href="../works/re-016366.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/hot%20air%20balloon%20%20-%20B%26W1.jpg"/></div><div class="index-title">Hot Air Balloon</div></a>
+<a class="index-card" href="../works/re-013967.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/wheel%20bulb%20%20-%20B%26W%20.jpg"/></div><div class="index-title">Hot Watt</div></a>
+<a class="index-card" href="../works/re-014832-1.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/inverse%20bulbs%20%20-%20B%26W1.jpg"/></div><div class="index-title">Inverse Bulbs Sketch 1</div></a>
+<a class="index-card" href="../works/re-014832-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Inverse%20Bulbs%20sketch%202.jpg"/></div><div class="index-title">Inverse Bulbs Sketch 2</div></a>
+<a class="index-card" href="../works/re-014832-3.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Inverse%20Bulbs%20sketch%203.jpg"/></div><div class="index-title">Inverse Bulbs Sketch 3</div></a>
+<a class="index-card" href="../sets/set-re-014811-v.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/Lamp%20right%20%20-%20B%26W%201.jpg"/></div><div class="index-title">Lamp<div class="set-label">Set</div></div></a>
+<a class="index-card" href="../works/re-016380.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20drawing.jpg"/></div><div class="index-title">Light Bulb 1</div></a>
+<a class="index-card" href="../works/re-016797.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20%20-%20B%26W1.jpg"/></div><div class="index-title">Light Bulb 2</div></a>
+<a class="index-card" href="../works/re-016798.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/plain%20bulb%20-%20B%26W.jpg"/></div><div class="index-title">Light Bulb 3</div></a>
+<a class="index-card" href="../works/re-013478.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/lighting-electricity-and-lamps/light%20bulb%20grenade.jpg"/></div><div class="index-title">Light Bulb Grenade</div></a>
+<a class="index-card" href="../works/re-015026.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2867%29.jpg?v=20260701d"/></div><div class="index-title">Light Cult Hats</div></a>
+<a class="index-card" href="../works/re-015032-r.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2854%29.jpg?v=20260701d"/></div><div class="index-title">Light Cult Sketch 1</div></a>
+<a class="index-card" href="../works/re-014569-r.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2846%29.jpg?v=20260619g"/></div><div class="index-title">Light Cult Sketch 2</div></a>
+<a class="index-card" href="../works/re-015018-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Light%20Scepter.jpg"/></div><div class="index-title">Light Scepter</div></a>
+<a class="index-card" href="../works/re-016379.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Lightning%20Bulb%20ORIGINAL%20COLOR.jpg"/></div><div class="index-title">Lightning Brain</div></a>
+<a class="index-card" href="../works/re-015082-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/lightninger.jpg"/></div><div class="index-title">Lightninger Sketch</div></a>
+<a class="index-card" href="../works/re-016415.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/light%20bulb%20grenade%20%20-%20B%26W1.jpg"/></div><div class="index-title">Lumenade</div></a>
+<a class="index-card" href="../works/re-015042.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/pacifier%20%20-%20B%26W%20.jpg"/></div><div class="index-title">Pacifier 1</div></a>
+<a class="index-card" href="../works/re-015046.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2868%29gh.jpg?v=20260701e"/></div><div class="index-title">Pacifier 2</div></a>
+<a class="index-card" href="../works/re-015058-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/gun%20%20-%20B%26W%201.jpg"/></div><div class="index-title">Revolver</div></a>
+<a class="index-card" href="../works/re-015020.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/shoe%20-%20B%26W.jpg"/></div><div class="index-title">Shoe</div></a>
+<a class="index-card" href="../works/re-015047.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2861%29.jpg?v=20260701d"/></div><div class="index-title">Storm Cloud</div></a>
+<a class="index-card" href="../works/re-015030.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/sword%20and%20shield%20-%20B%26W.jpg"/></div><div class="index-title">Sword and Shield</div></a>
+<a class="index-card" href="../works/re-015051-3.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/tank%20%20-%20B%26W%20.jpg"/></div><div class="index-title">Tank</div></a>
+<a class="index-card" href="../works/re-015073.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/Thick-line%20bulb.jpg"/></div><div class="index-title">Thick-Line Bulb</div></a>
+<a class="index-card" href="../works/re-014392.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/machine%20%20-%20B%26W.jpg"/></div><div class="index-title">Tractorbulb</div></a>
+<a class="index-card" href="../works/re-016413.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2848%29.jpg?v=20260618a"/></div><div class="index-title">Triple Watt</div></a>
+<a class="index-card" href="../works/re-014816.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-mythic-dark/main/images/Sketches/Light%20Cult/Imported/trophy.jpg"/></div><div class="index-title">Trophy</div></a>
+<a class="index-card" href="../works/re-014813-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/bulb%20trumpet%20%20%20-%20B%26W%201.jpg"/></div><div class="index-title">Trumpet</div></a>
+<a class="index-card" href="../works/re-014816-trumpet.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/Trumpet%20%20-%20B%26W.jpg"/></div><div class="index-title">Trumpet</div></a>
+<a class="index-card" href="../works/re-015067-2.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/udder%20bulb.jpg"/></div><div class="index-title">Udder Bulb</div></a>
+<a class="index-card" href="../works/re-015871.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-objects/images/Sketches/Objects/musical-instruments-and-entertainment/bulb%20ukelele.jpg"/></div><div class="index-title">Ukelele</div></a>
+<a class="index-card" href="../works/re-016370.html"><div class="index-image"><img alt="" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Light%20Cult/mandala_elements-09%20(1).jpg"/></div><div class="index-title">Unicycle</div></a>
+<a class="index-card" href="../works/re-015021.html"><div class="index-image"><img alt="" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260701%20%2862%29.jpg?v=20260701d"/></div><div class="index-title">Volkswattgen</div></a>
+</div></section><nav aria-label="Catalogue sequence" class="sequence-nav"><a class="nav-pill" href="../characters/index.html">← Previous: Characters</a></nav><footer>Published via GitHub Pages<br/>for long-term public access.</footer>
 </main></body></html>
