@@ -1,79 +1,421 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Standalone Kaiju | Ron English Catalogue Raisonné</title>
+  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+  <style>
+/* Base layout */
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #171717; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+.wrap { max-width: 1100px; width: calc(100% - 36px); margin: 0 auto; padding: 24px 0 42px; }
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Standalone Kaiju | Ron English Catalogue Raisonné</title>
+/* Site and sequence navigation */
+.nav-pills, .sequence-nav { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; text-align: center; }
+.nav-pills { margin: 20px 0 28px; }
+.sequence-nav { margin: 28px auto 0; }
+.nav-pill { display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #111; text-decoration: none; font: 14px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.nav-pill:hover, .nav-pill:focus { background: #f3f4f6; }
 
-<style>
-/* Compact drawing category index - consolidated preview */
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-.wrap{max-width:1100px;width:calc(100% - 36px);margin:auto;padding:24px 0 42px}
-.nav-pills{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 28px;text-align:center}
-.nav-pill{display:inline-block;padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;color:#111;text-decoration:none;font:14px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
-.nav-pill:hover,.nav-pill:focus{background:#f3f4f6}
-.top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:4px 0 34px;font-size:14px}
-.top-nav a{color:inherit;text-decoration:none}.top-nav a:hover{text-decoration:underline}
-.catalogue-pill-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin:28px auto 42px}
-.catalogue-pill-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 28px;border:1px solid #d9dde2;border-radius:999px;color:inherit;text-decoration:none;font-size:18px}
-.page-header{text-align:center;margin:0 0 26px}.page-title{margin:0;font:500 clamp(30px,4vw,46px) Georgia,'Times New Roman',serif}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{flex:0 0 200px;max-width:200px;width:100%}
-.index-card,.group-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0000000b}
-.index-card:hover,.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid > .index-card > img{display:block;width:100%;height:158px;max-width:100%;max-height:158px;padding:8px;background:#f8fafc;object-fit:contain;border-bottom:1px solid #e5e7eb}
-.index-card > .card-title,.group-card .label{font:500 14px/1.35 Georgia,'Times New Roman',serif;padding:10px 8px 12px;margin:0;overflow-wrap:anywhere;text-align:center}
-.set-label{display:block;font:400 12px/1.35 Arial,Helvetica,sans-serif;color:#666;margin-top:4px}
-.group-card img{display:block;width:100%;height:158px;object-fit:contain;padding:8px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
-footer{text-align:center;margin-top:35px;padding-top:18px;border-top:1px solid #d8d8d8;color:#666;font-size:13px}footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px}.index-grid > .index-card > img,.group-card img{height:140px;max-height:140px}.index-card > .card-title,.group-card .label{font-size:13px}}
+/* Page heading */
+.page-header { text-align: center; margin: 0 0 26px; }
+.page-title { margin: 0; font: 500 clamp(30px, 4vw, 46px) Georgia, "Times New Roman", serif; }
 
-/* Existing catalogue relationship note, retained in consolidated style. */
-.project-note{max-width:900px;margin:0 auto 26px;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;text-align:center;line-height:1.6}
-.project-note a{color:inherit}
+/* Compact index: centered 200px cards with contained 158px images */
+.index-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 16px; margin: 0 auto; }
+.index-card { flex: 0 0 200px; max-width: 200px; min-width: 0; display: flex; flex-direction: column; overflow: hidden; text-align: center; text-decoration: none; color: inherit; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 3px 12px rgba(0, 0, 0, .04); }
+.index-card:hover { border-color: #c9ced5; box-shadow: 0 5px 16px rgba(0, 0, 0, .08); }
+.index-image { display: flex; align-items: center; justify-content: center; height: 158px; padding: 8px; background: #f8fafc; border-bottom: 1px solid #e5e7eb; }
+.index-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.card-title { margin: 0; padding: 10px 8px 12px; font: 500 14px/1.35 Georgia, "Times New Roman", serif; overflow-wrap: anywhere; text-align: center; }
+.set-label { display: block; margin-top: 4px; font: 400 12px/1.35 Arial, Helvetica, sans-serif; color: #666; }
 
-</style>
+/* Footer */
+footer { margin-top: 35px; padding-top: 18px; border-top: 1px solid #d8d8d8; color: #666; font-size: 13px; text-align: center; }
+footer a { color: inherit; }
 
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
-</head><body><main class="wrap"><nav aria-label="Site navigation" class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../../index.html">← Kaijus</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
-</nav><header class="page-header"><h1 class="page-title">Standalone Kaiju</h1></header><section class="section-card ron-standard-index-panel" data-role="index-listing"><div class="index-grid"><a class="index-card" href="../../works/re-014433--02.html"><img alt="Absent Minded" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Absent%20Minded.jpg"/><div class="card-title">Absent Minded</div></a>
-<a class="index-card" href="../../works/re-014484.html"><img alt="Age Against the Machine" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2898%29r.jpg?v=20260619b"/><div class="card-title">Age Against the Machine</div></a>
-<a class="index-card" href="../../works/re-014549.html"><img alt="All Ears" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%282%29.jpg?v=20260619d"/><div class="card-title">All Ears</div></a>
-<a class="index-card" href="../../works/re-016871.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/basquilot.jpg" alt="Basquilot" loading="lazy"><div class="card-title">Basquilot</div></a>
-<a class="index-card" href="../../works/re-013020.html"><img alt="Defensible Plumber" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Football%20Plunger%20COLOR.jpg"/><div class="card-title">Defensible Plumber</div></a>
-<a class="index-card" href="../../works/re-014628.html"><img alt="Earotica" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260619%20%28104%29.jpg?v=20260620a"/><div class="card-title">Earotica</div></a>
-<a class="index-card" href="../../works/re-014101.html"><img alt="Grinfinite" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-grins/images/Sketches/grins/Mouth%20Grin%20COLOR.jpg"/><div class="card-title">Grinfinite</div></a>
-<a class="index-card" href="../../sets/hanging-around.html"><img alt="Hanging Around" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/hanglin%27%20loose.jpg?v=20260910d"/><div class="card-title">Hanging Around<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../sets/heart-and-sole.html"><img alt="Heart and Sole" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260622%20%286%29.jpg?v=20260622e"/><div class="card-title">Heart and Sole<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-017288.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20261014%20%285%29.jpg" alt="Heavy Thoughts" loading="lazy"><div class="card-title">Heavy Thoughts</div></a>
-<a class="index-card" href="../../sets/homosperm.html"><img alt="Homosperm" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/homosperm%201.jpg"/><div class="card-title">Homosperm<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-012834.html"><img alt="Inner Dialogue" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/thoughtful.jpg?v=20260609b"/><div class="card-title">Inner Dialogue</div></a>
-<a class="index-card" href="../../works/re-015767.html"><img alt="Introvert" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Devouro%20COLOR.jpg"/><div class="card-title">Introvert</div></a>
-<a class="index-card" href="../../works/re-017096.html"><img alt="Kaiju Bat" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260712%20(3).jpg?v=20260915-2015"/><div class="card-title">Kaiju Bat</div></a>
-<a class="index-card" href="../../sets/kaiju-sketches.html"><img alt="Kaiju Sketches" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/88%20the%20football%20jock.jpg"/><div class="card-title">Kaiju Sketches<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-014559-r.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2812%29b.jpg?v=20260619d" alt="Laugh Track sketch" loading="lazy"><div class="card-title">Laugh Track sketch</div></a>
-<a class="index-card" href="../../works/re-014141.html"><img alt="Lunatic Fringe" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260617%20%2861%29.jpg?v=20260617c"/><div class="card-title">Lunatic Fringe</div></a>
-<a class="index-card" href="../../works/re-015772.html"><img alt="Mamoryman" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/Mamoryman.jpg"/><div class="card-title">Mamoryman</div></a>
-<a class="index-card" href="../../works/re-014437.html"><img alt="Mega-Minded Sketch" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Mega%20Minded.jpg"/><div class="card-title">Mega-Minded Sketch</div></a>
-<a class="index-card" href="../../works/re-012186.html"><img alt="Monster Masher" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Monster%20Masher%20B%26W.jpg"/><div class="card-title">Monster Masher</div></a>
-<a class="index-card" href="../../works/re-016349.html"><img alt="Mouth Monroe" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Grinelda%20Crossgaze%20COLOR.jpg"/><div class="card-title">Mouth Monroe</div></a>
-<a class="index-card" href="../../works/re-016775--02.html"><img alt="Mr Speechbubble" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Mr%20Speechbubble.jpg"/><div class="card-title">Mr Speechbubble</div></a>
-<a class="index-card" href="../../sets/mystery-mark.html"><img alt="Mystery Mark" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2871%29.jpg?v=20260619a"/><div class="card-title">Mystery Mark<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-011685.html"><img alt="Never Swallow Your Face" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/images/works-on-paper/undated-finished-drawings/Grumpy%20Monster%20pen%20and%20ink.jpg"/><div class="card-title">Never Swallow Your Face</div></a>
-<a class="index-card" href="../../works/re-014043.html"><img alt="Night Vision" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Drippy%20B%26W.jpg"/><div class="card-title">Night Vision</div></a>
-<a class="index-card" href="../../works/re-014510.html"><img alt="Nobody Home" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2815%29.jpg?v=20260619d"/><div class="card-title">Nobody Home</div></a>
-<a class="index-card" href="../../works/re-016354.html"><img alt="Nostrangeness" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Nostrangeness%20COLOR.jpg"/><div class="card-title">Nostrangeness</div></a>
-<a class="index-card" href="../../works/re-016767.html"><img alt="Open Wide" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260511%20(2)%20sketch.jpg?v=20260614e"/><div class="card-title">Open Wide</div></a>
-<a class="index-card" href="../../sets/pearl-of-wisdom.html"><img alt="Pearl of Wisdom" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-animals/images/Sketches/kaiju/wisdom%20pearl%20ORIGINAL.jpg"/><div class="card-title">Pearl of Wisdom<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-017318.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260929%20%283%29.jpg" alt="Psyclops" loading="lazy"><div class="card-title">Psyclops</div></a>
-<a class="index-card" href="../../sets/pudge-and-chubba.html"><img alt="Pudge &amp; Chubba" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260330.jpg?v=20260614e"/><div class="card-title">Pudge &amp; Chubba<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-016874.html"><img alt="Riding the Flame" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/riding%20the%20flame.jpg"/><div class="card-title">Riding the Flame</div></a>
-<a class="index-card" href="../../works/re-015768.html"><img alt="Running on Empty" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Pecklespark%20COLOR.jpg"/><div class="card-title">Running on Empty</div></a>
-<a class="index-card" href="../../works/re-012750.html"><img alt="Solar Plexus" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Sun%20God%20COLOR.jpg"/><div class="card-title">Solar Plexus</div></a>
-<a class="index-card" href="../../works/re-014489.html"><img alt="Talking Head" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/catt.jpg?v=20260619c"/><div class="card-title">Talking Head</div></a>
-<a class="index-card" href="../../sets/televisionaries.html"><img alt="Televisionaries" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/TVities/TV%20Tom%20COLOR.jpg"/><div class="card-title">Televisionaries<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-016759.html"><img alt="The Usual Suspects" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260303.jpg?v=20260614e"/><div class="card-title">The Usual Suspects</div></a>
-<a class="index-card" href="../../works/re-013221.html"><img alt="Tit Tot" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Tit%20Tot%20COLOR.jpg"/><div class="card-title">Tit Tot</div></a>
-<a class="index-card" href="../../works/re-014755.html"><img alt="Toilet Breath" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Toilet%20Breath%20COLOR.jpg"/><div class="card-title">Toilet Breath</div></a>
-<a class="index-card" href="../../works/re-014868.html"><img alt="Tongue Tied" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260220%20(2).jpg?v=20260614e"/><div class="card-title">Tongue Tied</div></a>
-<a class="index-card" href="../../works/re-017104.html"><img alt="Tongue Twister" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260729.jpg?v=20260915-2015"/><div class="card-title">Tongue Twister</div></a>
-<a class="index-card" href="../../works/re-013999.html"><img alt="Vice and Virtue" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20250326.jpg?v=20260614e"/><div class="card-title">Vice and Virtue</div></a>
-<a class="index-card" href="../../works/re-014957.html"><img alt="Worry Wart" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Perplip%20B%26W%20COLOR.jpg"/><div class="card-title">Worry Wart</div></a></div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="../reptilian-forms/index.html">&larr; Previous: Reptilian Forms</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
+/* Compact mobile sizes */
+@media (max-width: 480px) {
+  .wrap { width: calc(100% - 24px); }
+  .index-grid { gap: 12px; }
+  .index-card { flex: 0 1 145px; max-width: 145px; }
+  .index-image { height: 140px; }
+  .card-title { font-size: 13px; }
+}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav-pills" aria-label="Site navigation">
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a>
+      <a class="nav-pill" href="../../index.html">← Kaijus</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
+    </nav>
+    <header class="page-header">
+      <h1 class="page-title">Standalone Kaiju</h1>
+    </header>
+    <section data-role="index-listing">
+      <div class="index-grid">
+        <a class="index-card" href="../../works/re-014433--02.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Absent%20Minded.jpg" alt="Absent Minded" loading="lazy">
+          </div>
+          <div class="card-title">
+            Absent Minded
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014484.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2898%29r.jpg?v=20260619b" alt="Age Against the Machine" loading="lazy">
+          </div>
+          <div class="card-title">
+            Age Against the Machine
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014549.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%282%29.jpg?v=20260619d" alt="All Ears" loading="lazy">
+          </div>
+          <div class="card-title">
+            All Ears
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016871.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/basquilot.jpg" alt="Basquilot" loading="lazy">
+          </div>
+          <div class="card-title">
+            Basquilot
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-013020.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Football%20Plunger%20COLOR.jpg" alt="Defensible Plumber" loading="lazy">
+          </div>
+          <div class="card-title">
+            Defensible Plumber
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014628.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260619%20%28104%29.jpg?v=20260620a" alt="Earotica" loading="lazy">
+          </div>
+          <div class="card-title">
+            Earotica
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014101.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-grins/images/Sketches/grins/Mouth%20Grin%20COLOR.jpg" alt="Grinfinite" loading="lazy">
+          </div>
+          <div class="card-title">
+            Grinfinite
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/hanging-around.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/hanglin%27%20loose.jpg?v=20260910d" alt="Hanging Around" loading="lazy">
+          </div>
+          <div class="card-title">
+            Hanging Around
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/heart-and-sole.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-3/main/sketches/Scan_20260622%20%286%29.jpg?v=20260622e" alt="Heart and Sole" loading="lazy">
+          </div>
+          <div class="card-title">
+            Heart and Sole
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-017288.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20261014%20%285%29.jpg" alt="Heavy Thoughts" loading="lazy">
+          </div>
+          <div class="card-title">
+            Heavy Thoughts
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/homosperm.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/homosperm%201.jpg" alt="Homosperm" loading="lazy">
+          </div>
+          <div class="card-title">
+            Homosperm
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-012834.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/thoughtful.jpg?v=20260609b" alt="Inner Dialogue" loading="lazy">
+          </div>
+          <div class="card-title">
+            Inner Dialogue
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-015767.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Devouro%20COLOR.jpg" alt="Introvert" loading="lazy">
+          </div>
+          <div class="card-title">
+            Introvert
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-017096.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260712%20(3).jpg?v=20260915-2015" alt="Kaiju Bat" loading="lazy">
+          </div>
+          <div class="card-title">
+            Kaiju Bat
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/kaiju-sketches.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/88%20the%20football%20jock.jpg" alt="Kaiju Sketches" loading="lazy">
+          </div>
+          <div class="card-title">
+            Kaiju Sketches
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014559-r.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2812%29b.jpg?v=20260619d" alt="Laugh Track sketch" loading="lazy">
+          </div>
+          <div class="card-title">
+            Laugh Track sketch
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014141.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260617%20%2861%29.jpg?v=20260617c" alt="Lunatic Fringe" loading="lazy">
+          </div>
+          <div class="card-title">
+            Lunatic Fringe
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-015772.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/New/Mamoryman.jpg" alt="Mamoryman" loading="lazy">
+          </div>
+          <div class="card-title">
+            Mamoryman
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014437.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Mega%20Minded.jpg" alt="Mega-Minded Sketch" loading="lazy">
+          </div>
+          <div class="card-title">
+            Mega-Minded Sketch
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-012186.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Monster%20Masher%20B%26W.jpg" alt="Monster Masher" loading="lazy">
+          </div>
+          <div class="card-title">
+            Monster Masher
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016349.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Grinelda%20Crossgaze%20COLOR.jpg" alt="Mouth Monroe" loading="lazy">
+          </div>
+          <div class="card-title">
+            Mouth Monroe
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016775--02.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Mr%20Speechbubble.jpg" alt="Mr Speechbubble" loading="lazy">
+          </div>
+          <div class="card-title">
+            Mr Speechbubble
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/mystery-mark.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260618%20%2871%29.jpg?v=20260619a" alt="Mystery Mark" loading="lazy">
+          </div>
+          <div class="card-title">
+            Mystery Mark
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-011685.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/images/works-on-paper/undated-finished-drawings/Grumpy%20Monster%20pen%20and%20ink.jpg" alt="Never Swallow Your Face" loading="lazy">
+          </div>
+          <div class="card-title">
+            Never Swallow Your Face
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014043.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Drippy%20B%26W.jpg" alt="Night Vision" loading="lazy">
+          </div>
+          <div class="card-title">
+            Night Vision
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014510.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260619%20%2815%29.jpg?v=20260619d" alt="Nobody Home" loading="lazy">
+          </div>
+          <div class="card-title">
+            Nobody Home
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016354.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Nostrangeness%20COLOR.jpg" alt="Nostrangeness" loading="lazy">
+          </div>
+          <div class="card-title">
+            Nostrangeness
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016767.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260511%20(2)%20sketch.jpg?v=20260614e" alt="Open Wide" loading="lazy">
+          </div>
+          <div class="card-title">
+            Open Wide
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/pearl-of-wisdom.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-animals/images/Sketches/kaiju/wisdom%20pearl%20ORIGINAL.jpg" alt="Pearl of Wisdom" loading="lazy">
+          </div>
+          <div class="card-title">
+            Pearl of Wisdom
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-017318.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260929%20%283%29.jpg" alt="Psyclops" loading="lazy">
+          </div>
+          <div class="card-title">
+            Psyclops
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/pudge-and-chubba.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260330.jpg?v=20260614e" alt="Pudge &amp; Chubba" loading="lazy">
+          </div>
+          <div class="card-title">
+            Pudge &amp; Chubba
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016874.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/riding%20the%20flame.jpg" alt="Riding the Flame" loading="lazy">
+          </div>
+          <div class="card-title">
+            Riding the Flame
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-015768.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Pecklespark%20COLOR.jpg" alt="Running on Empty" loading="lazy">
+          </div>
+          <div class="card-title">
+            Running on Empty
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-012750.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Sun%20God%20COLOR.jpg" alt="Solar Plexus" loading="lazy">
+          </div>
+          <div class="card-title">
+            Solar Plexus
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014489.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/catt.jpg?v=20260619c" alt="Talking Head" loading="lazy">
+          </div>
+          <div class="card-title">
+            Talking Head
+          </div>
+        </a>
+        <a class="index-card" href="../../sets/televisionaries.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-pop-culture/images/Sketches/TVities/TV%20Tom%20COLOR.jpg" alt="Televisionaries" loading="lazy">
+          </div>
+          <div class="card-title">
+            Televisionaries
+            <div class="set-label">Set</div>
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-016759.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260303.jpg?v=20260614e" alt="The Usual Suspects" loading="lazy">
+          </div>
+          <div class="card-title">
+            The Usual Suspects
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-013221.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Tit%20Tot%20COLOR.jpg" alt="Tit Tot" loading="lazy">
+          </div>
+          <div class="card-title">
+            Tit Tot
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014755.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Toilet%20Breath%20COLOR.jpg" alt="Toilet Breath" loading="lazy">
+          </div>
+          <div class="card-title">
+            Toilet Breath
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014868.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20260220%20(2).jpg?v=20260614e" alt="Tongue Tied" loading="lazy">
+          </div>
+          <div class="card-title">
+            Tongue Tied
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-017104.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-4/main/sketches/Scan_20260729.jpg?v=20260915-2015" alt="Tongue Twister" loading="lazy">
+          </div>
+          <div class="card-title">
+            Tongue Twister
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-013999.html">
+          <div class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-2/main/Images/Scan_20250326.jpg?v=20260614e" alt="Vice and Virtue" loading="lazy">
+          </div>
+          <div class="card-title">
+            Vice and Virtue
+          </div>
+        </a>
+        <a class="index-card" href="../../works/re-014957.html">
+          <div class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Perplip%20B%26W%20COLOR.jpg" alt="Worry Wart" loading="lazy">
+          </div>
+          <div class="card-title">
+            Worry Wart
+          </div>
+        </a>
+      </div>
+    </section>
+    <nav class="sequence-nav" aria-label="Catalogue sequence">
+      <a class="nav-pill sequence-pill" href="../reptilian-forms/index.html">← Previous: Reptilian Forms</a>
+    </nav>
+    <footer>Published via GitHub Pages<br/>for long-term public access.</footer>
+  </main>
+</body>
+</html>

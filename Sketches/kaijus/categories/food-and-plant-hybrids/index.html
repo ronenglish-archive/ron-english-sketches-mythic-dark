@@ -1,47 +1,134 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Food &amp; Plant Hybrids | Ron English Catalogue Raisonné</title>
+  <style>
+    /* Page foundation */
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: #171717; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+    .wrap { width: calc(100% - 36px); max-width: 1100px; margin: 0 auto; padding: 24px 0 42px; }
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Food &amp; Plant Hybrids | Ron English Catalogue Raisonné</title>
+    /* Navigation */
+    .nav-pills, .sequence-nav { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; text-align: center; }
+    .nav-pills { margin: 20px 0 28px; }
+    .nav-pill { display: inline-block; padding: 8px 14px; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #111; text-decoration: none; font: 14px/1.25 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .nav-pill:hover, .nav-pill:focus-visible { background: #f3f4f6; }
+    .sequence-nav { margin: 28px auto 20px; }
 
-<style>
-/* Compact drawing category index - consolidated preview */
-*{box-sizing:border-box}
-body{margin:0;background:#fff;color:#171717;font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-.wrap{max-width:1100px;width:calc(100% - 36px);margin:auto;padding:24px 0 42px}
-.nav-pills{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:20px 0 28px;text-align:center}
-.nav-pill{display:inline-block;padding:8px 14px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;color:#111;text-decoration:none;font:14px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif}
-.nav-pill:hover,.nav-pill:focus{background:#f3f4f6}
-.top-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:4px 0 34px;font-size:14px}
-.top-nav a{color:inherit;text-decoration:none}.top-nav a:hover{text-decoration:underline}
-.catalogue-pill-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:18px;margin:28px auto 42px}
-.catalogue-pill-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 28px;border:1px solid #d9dde2;border-radius:999px;color:inherit;text-decoration:none;font-size:18px}
-.page-header{text-align:center;margin:0 0 26px}.page-title{margin:0;font:500 clamp(30px,4vw,46px) Georgia,'Times New Roman',serif}
-.index-grid,.group-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch;margin:0 auto}
-.index-grid>.index-card,.group-grid>.group-card{flex:0 0 200px;max-width:200px;width:100%}
-.index-card,.group-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0000000b}
-.index-card:hover,.group-card:hover{border-color:#c9ced5;box-shadow:0 5px 16px #00000014}
-.index-grid > .index-card > img{display:block;width:100%;height:158px;max-width:100%;max-height:158px;padding:8px;background:#f8fafc;object-fit:contain;border-bottom:1px solid #e5e7eb}
-.index-card > .card-title,.group-card .label{font:500 14px/1.35 Georgia,'Times New Roman',serif;padding:10px 8px 12px;margin:0;overflow-wrap:anywhere;text-align:center}
-.set-label{display:block;font:400 12px/1.35 Arial,Helvetica,sans-serif;color:#666;margin-top:4px}
-.group-card img{display:block;width:100%;height:158px;object-fit:contain;padding:8px;background:#f8fafc;border-bottom:1px solid #e5e7eb}
-footer{text-align:center;margin-top:35px;padding-top:18px;border-top:1px solid #d8d8d8;color:#666;font-size:13px}footer a{color:inherit}
-@media(max-width:480px){.wrap{width:calc(100% - 24px)}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px}.index-grid > .index-card > img,.group-card img{height:140px;max-height:140px}.index-card > .card-title,.group-card .label{font-size:13px}}
+    /* Heading */
+    .page-header { margin: 0 0 26px; text-align: center; }
+    .page-title { margin: 0; font: 500 clamp(30px, 4vw, 46px) Georgia, "Times New Roman", serif; }
 
-/* Existing catalogue relationship note, retained in consolidated style. */
-.project-note{max-width:900px;margin:0 auto 26px;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f9fafb;text-align:center;line-height:1.6}
-.project-note a{color:inherit}
+    /* Compact artwork cards */
+    .index-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 16px; margin: 0 auto; }
+    .index-card { display: flex; flex: 0 0 200px; flex-direction: column; width: 200px; max-width: 200px; min-width: 0; overflow: hidden; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #0000000b; color: inherit; text-align: center; text-decoration: none; }
+    .index-card:hover, .index-card:focus-visible { border-color: #c9ced5; box-shadow: 0 5px 16px #00000014; }
+    .index-image { display: flex; flex: 0 0 158px; align-items: center; justify-content: center; width: 100%; height: 158px; padding: 8px; border-bottom: 1px solid #e5e7eb; background: #f8fafc; }
+    .index-image img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
+    .card-title { margin: 0; padding: 10px 8px 12px; overflow-wrap: anywhere; font: 500 14px/1.35 Georgia, "Times New Roman", serif; text-align: center; }
+    .set-label { display: block; margin-top: 4px; color: #666; font: 400 12px/1.35 Arial, Helvetica, sans-serif; }
 
-</style>
+    /* Footer */
+    footer { margin-top: 35px; padding-top: 18px; border-top: 1px solid #d8d8d8; color: #666; font-size: 13px; text-align: center; }
 
-<link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
-</head><body><main class="wrap"><nav aria-label="Site navigation" class="nav-pills"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../../index.html">← Kaijus</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
-</nav><header class="page-header"><h1 class="page-title">Food &amp; Plant Hybrids</h1></header><section class="section-card ron-standard-index-panel" data-role="index-listing"><div class="index-grid"><a class="index-card" href="../../atomic-orange/digital-drawings.html"><img alt="Atomic Orange" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Atom%20Tom%20Carotene%20COLOR.jpg"/><div class="card-title">Atomic Orange</div></a>
-<a class="index-card" href="../../works/re-013081.html"><img alt="Carrot and Friends" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/character-groups-and-ensembles/Carrot%20and%20Friends%20ORIGINAL.jpg"/><div class="card-title">Carrot and Friends</div></a>
-<a class="index-card" href="../../works/re-012832.html"><img alt="Chilly Willy" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/snowman.jpg?v=20260609b"/><div class="card-title">Chilly Willy</div></a>
-<a class="index-card" href="../../sets/corn-man.html"><img alt="Corn Man" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-animals/images/Sketches/kaiju/Corn%20ManTransparent%20paper%209x12%20pencil%20ORIGINAL.jpg"/><div class="card-title">Corn Man<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-016858.html"><img alt="Decreparrot" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/decreparrot.jpg"/><div class="card-title">Decreparrot</div></a>
-<a class="index-card" href="../../works/re-014983.html"><img alt="Lemon Maid" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Lemon%20Maid%20COLOR.jpg"/><div class="card-title">Lemon Maid</div></a>
-<a class="index-card" href="../../works/re-016857.html"><img alt="Mounted Carrot" loading="lazy" src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Mounted%20Carrot.jpg"/><div class="card-title">Mounted Carrot</div></a>
-<a class="index-card" href="../../sets/pizza-faces.html"><img alt="Pizza Faces" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Pizza%20Face%201%20COLOR.jpg"/><div class="card-title">Pizza Faces<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../sets/rootster.html"><img alt="Rootster" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Lady%20Carrot%20COLOR.jpg"/><div class="card-title">Rootster<div class="set-label">Set</div></div></a>
-<a class="index-card" href="../../works/re-017311.html"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260929%20%2810%29.jpg" alt="The Root Rider" loading="lazy"><div class="card-title">The Root Rider</div></a>
-<a class="index-card" href="../../works/re-014982.html"><img alt="Weepee's Liquid Lemon" loading="lazy" src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Weepee%20COLOR.jpg"/><div class="card-title">Weepee's Liquid Lemon</div></a></div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="../face-mutations/index.html">&larr; Previous: Face Mutations</a><a class="nav-pill sequence-pill" href="../object-mutations/index.html">Next: Object Mutations &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 24px); }
+      .index-grid { gap: 12px; }
+      .index-card { flex: 0 1 145px; width: 145px; max-width: 145px; }
+      .index-image { flex-basis: 140px; height: 140px; }
+      .card-title { font-size: 13px; }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav-pills" aria-label="Site navigation">
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a>
+      <a class="nav-pill" href="../../index.html">← Kaijus</a>
+      <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
+    </nav>
+    <header class="page-header">
+      <h1 class="page-title">Food &amp; Plant Hybrids</h1>
+    </header>
+    <section class="index-listing" data-role="index-listing">
+      <div class="index-grid">
+        <a class="index-card" href="../../atomic-orange/digital-drawings.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Atom%20Tom%20Carotene%20COLOR.jpg" alt="Atomic Orange" loading="lazy">
+          </span>
+          <span class="card-title">Atomic Orange</span>
+        </a>
+        <a class="index-card" href="../../works/re-013081.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/images/Sketches/character-groups-and-ensembles/Carrot%20and%20Friends%20ORIGINAL.jpg" alt="Carrot and Friends" loading="lazy">
+          </span>
+          <span class="card-title">Carrot and Friends</span>
+        </a>
+        <a class="index-card" href="../../works/re-012832.html">
+          <span class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/snowman.jpg?v=20260609b" alt="Chilly Willy" loading="lazy">
+          </span>
+          <span class="card-title">Chilly Willy</span>
+        </a>
+        <a class="index-card" href="../../sets/corn-man.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-animals/images/Sketches/kaiju/Corn%20ManTransparent%20paper%209x12%20pencil%20ORIGINAL.jpg" alt="Corn Man" loading="lazy">
+          </span>
+          <span class="card-title">Corn Man<span class="set-label">Set</span></span>
+        </a>
+        <a class="index-card" href="../../works/re-016858.html">
+          <span class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/decreparrot.jpg" alt="Decreparrot" loading="lazy">
+          </span>
+          <span class="card-title">Decreparrot</span>
+        </a>
+        <a class="index-card" href="../../works/re-014983.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Lemon%20Maid%20COLOR.jpg" alt="Lemon Maid" loading="lazy">
+          </span>
+          <span class="card-title">Lemon Maid</span>
+        </a>
+        <a class="index-card" href="../../works/re-016857.html">
+          <span class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings/main/images/Sketches/New/Mounted%20Carrot.jpg" alt="Mounted Carrot" loading="lazy">
+          </span>
+          <span class="card-title">Mounted Carrot</span>
+        </a>
+        <a class="index-card" href="../../sets/pizza-faces.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Pizza%20Face%201%20COLOR.jpg" alt="Pizza Faces" loading="lazy">
+          </span>
+          <span class="card-title">Pizza Faces<span class="set-label">Set</span></span>
+        </a>
+        <a class="index-card" href="../../sets/rootster.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Lady%20Carrot%20COLOR.jpg" alt="Rootster" loading="lazy">
+          </span>
+          <span class="card-title">Rootster<span class="set-label">Set</span></span>
+        </a>
+        <a class="index-card" href="../../works/re-017311.html">
+          <span class="index-image">
+            <img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/Scan_20260929%20%2810%29.jpg" alt="The Root Rider" loading="lazy">
+          </span>
+          <span class="card-title">The Root Rider</span>
+        </a>
+        <a class="index-card" href="../../works/re-014982.html">
+          <span class="index-image">
+            <img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kaijus/Weepee%20COLOR.jpg" alt="Weepee&#x27;s Liquid Lemon" loading="lazy">
+          </span>
+          <span class="card-title">Weepee's Liquid Lemon</span>
+        </a>
+      </div>
+    </section>
+    <nav class="sequence-nav" aria-label="Catalogue sequence">
+      <a class="nav-pill" href="../face-mutations/index.html">← Previous: Face Mutations</a>
+      <a class="nav-pill" href="../object-mutations/index.html">Next: Object Mutations →</a>
+    </nav>
+    <footer>Published via GitHub Pages<br>for long-term public access.</footer>
+  </main>
+</body>
+</html>
