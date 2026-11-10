@@ -1,306 +1,75 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brain Wave Surfer | Brains | Ron English Catalogue Raisonné</title><style>
-/* Ron English drawing detail-page compact standard — November 8, 2026.
-   One consolidated stylesheet. Artwork, body markup, links and source images are preserved. */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: #222;
-  background: #fff;
-  font: 14px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-a { color: inherit; }
-.wrap, main.wrap {
-  width: 100%;
-  max-width: 620px;
-  margin: 0 auto;
-  padding: 16px 14px 24px;
-}
-.page-header {
-  margin: 8px auto 14px;
-  text-align: center;
-}
-.page-title {
-  margin: 0;
-  color: #222;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 1.2;
-}
-.nav-pills, .sequence-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.nav-pill {
-  display: block;
-  border: 1px solid #e5e7eb;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  text-decoration: none;
-}
-.original-drawing-heading {
-  margin: 0 0 14px;
-  color: #222;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  font-weight: 400;
-  text-align: center;
-}
-.catalogue-meta-block {
-  width: 100%;
-  max-width: 560px;
-  margin: 12px auto 18px;
-  text-align: center;
-}
-.work-meta {
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  line-height: 1.65;
-  text-align: center;
-}
-.work-meta li { display: block; margin: 2px auto; }
-.relationship-note {
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto 18px;
-  padding: 12px 16px;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  background: #f9fafb;
-  line-height: 1.6;
-  text-align: center;
-}
-.relationship-note a { color: inherit; }
-.section-card {
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto 18px;
-  padding: 18px 16px;
-  border: 1px solid #e3e5e8;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,.045);
-}
-.section-card h2 {
-  margin: 0 0 14px;
-  color: #222;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 1.25;
-  text-align: center;
-}
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  margin: 0 auto;
-}
-.gallery-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #e2e4e7;
-  border-radius: 5px;
-  background: #fff;
-  line-height: 0;
-  text-decoration: none;
-}
-.gallery-item img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-/* Original Drawing: keep each original legible and uncropped.
-   Multiple originals remain vertically stacked when present. */
-.original-grid {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 14px;
-}
-.original-grid > .gallery-item {
-  flex: 0 1 auto;
-  width: auto;
-  max-width: 410px;
-  padding: 7px;
-}
-.original-grid > .gallery-item img {
-  max-width: 100%;
-  max-height: 380px;
-}
-/* Digitized Versions: the separate 155 x 165px standard. */
-section.section-card[data-role="digital"] > .gallery-grid,
-section.section-card[data-role="digitized-versions"] > .gallery-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-section.section-card[data-role="digital"] > .gallery-grid > .gallery-item,
-section.section-card[data-role="digitized-versions"] > .gallery-grid > .gallery-item {
-  flex: 0 1 155px;
-  width: 155px;
-  min-width: 130px;
-  max-width: 155px;
-  height: 165px;
-  padding: 0;
-  border: 1px solid #e2e4e7;
-  border-radius: 5px;
-  background: #fff;
-  overflow: hidden;
-}
-section.section-card[data-role="digital"] > .gallery-grid > .gallery-item img,
-section.section-card[data-role="digitized-versions"] > .gallery-grid > .gallery-item img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 165px;
-  object-fit: contain;
-}
-/* Plain Cards remain documentary cards, distinct from Digitized Versions. */
-section.section-card[data-role="cards"] > .gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 12px;
-}
-section.section-card[data-role="cards"] > .gallery-grid > .gallery-item {
-  flex: 0 1 130px;
-  width: 130px;
-  min-width: 120px;
-  max-width: 130px;
-  height: 170px;
-  padding: 0;
-  border-radius: 5px;
-  background: #fff;
-  overflow: hidden;
-}
-section.section-card[data-role="cards"] > .gallery-grid > .gallery-item img {
-  max-width: 100%;
-  max-height: 170px;
-  object-fit: contain;
-}
-/* Literature uses the Sirus Alien reference, not the digital/card dimensions. */
-section.section-card[data-role="literature"] {
-  max-width: 560px;
-  padding: 19px 16px;
-}
-section.section-card[data-role="literature"] .literature-entry {
-  width: 100%;
-  max-width: 520px;
-  margin: 0 auto 16px;
-  text-align: center;
-  line-height: 1.65;
-}
-section.section-card[data-role="literature"] .literature-entry p,
-section.section-card[data-role="literature"] > p {
-  margin: 8px auto;
-  text-align: center;
-}
-section.section-card[data-role="literature"] .literature-entry > .gallery-grid,
-section.section-card[data-role="literature"] > .gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  max-width: 520px;
-  margin: 0 auto;
-}
-section.section-card[data-role="literature"] .gallery-item {
-  flex: 0 1 155px;
-  width: 155px;
-  max-width: 155px;
-  padding: 6px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fff;
-}
-section.section-card[data-role="literature"] .gallery-item img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 155px;
-  object-fit: contain;
-}
-/* Original-not-located notices remain readable within the Original Drawing holder. */
-section.section-card[data-role="original-drawing"] .text-block {
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: center;
-}
-/* Notes retain their own section semantics and content. */
-section.section-card[data-role="notes"] .text-block,
-section.section-card[data-role="notes"] .notes-text {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-section.section-card[data-role="notes"] .text-block p { margin: 7px auto; }
-footer {
-  margin: 24px auto 0;
-  padding: 16px 0 4px;
-  border-top: 1px solid #e3e5e8;
-  color: #777;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-}
-@media (max-width: 580px) {
-  .wrap, main.wrap { padding: 14px 10px 20px; }
-  .page-header { margin: 6px auto 12px; }
-  .page-title { font-size: 25px; }
-  .nav-pills { gap: 7px; margin: 8px auto 14px; }
-  .nav-pill { padding: 6px 9px; font-size: 11px; }
-  .section-card { padding: 16px 12px; margin-bottom: 14px; }
-  .original-grid > .gallery-item { max-width: 100%; }
-  section.section-card[data-role="digital"] > .gallery-grid > .gallery-item,
-  section.section-card[data-role="digitized-versions"] > .gallery-grid > .gallery-item {
-    flex-basis: 155px;
-    min-width: 130px;
-    max-width: 155px;
-  }
-  section.section-card[data-role="literature"] .literature-entry { max-width: 100%; }
-  section.section-card[data-role="literature"] .literature-entry > .gallery-grid,
-  section.section-card[data-role="literature"] > .gallery-grid { max-width: 100%; }
-}
-/* Preserve this page's existing compact navigation dimensions and spacing. */
-.nav-pills { gap: 7px; margin: 7px 0 12px; }
-.sequence-nav { gap: 12px; margin: 20px 0 8px; }
-.nav-pill { font-size: 12px; padding: 6px 11px; line-height: 19.2px; }
-.sequence-pill { font-size: 12px; padding: 7px 11px; line-height: 19.2px; }
-
-</style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brain Wave Surfer | Brains | Ron English Catalogue Raisonné</title>
 
 
 <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
 
 
-</head><body><main class="wrap">
+<style id="ron-approved-drawing-detail-v3">
+
+/* Owner-approved V3 drawing-detail presentation. November 8 standards. */
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:#222}
+body{font:14px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-align:center}
+a{color:inherit}
+.wrap{width:100%;max-width:620px;padding:16px 14px 22px;margin:0 auto}
+.nav-pills,.sequence-nav,.ron-bottom-prev-next-center{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px;margin:8px auto 14px;text-align:center}
+.nav-pill,.sequence-pill,.sequence-nav>a,.ron-bottom-prev-next-center>a{display:inline-block;flex:0 1 auto;padding:6px 11px;border:1px solid #e5e7eb;border-radius:999px;text-decoration:none;font-size:12px;background:#fff;color:#222}
+.sequence-spacer{display:none}
+.page-header{margin:12px auto 16px;text-align:center}
+h1,.page-title,.page-header h1{font:400 28px/1.17 Georgia,serif;text-align:center;letter-spacing:normal;margin:12px auto 16px}
+h2,h3,.original-drawing-heading,.section-card h2,.section-block h2{font:400 20px/1.3 Georgia,serif;text-align:center;margin:0 0 12px}
+.wrap>h2,.wrap>main>h2{margin:10px auto 12px}
+.catalogue-meta-block,.meta,.metadata{width:100%;max-width:540px;margin:10px auto 15px;text-align:center}
+.work-meta{list-style:none;padding:0;margin:0 auto;line-height:1.65;text-align:center}
+.work-meta li{display:block;margin:2px auto;text-align:center}
+.relationship-note{max-width:520px;margin:12px auto;padding:12px 14px;background:#f3f3f3;border:1px solid #e5e7eb;border-radius:10px;text-align:center}
+.section-card,.section-block,.primary-artwork,.media-section{display:block;width:100%;max-width:560px;margin:12px auto;padding:19px 16px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:none;text-align:center}
+.section-card h2,.section-block h2{margin:0 0 12px}
+.gallery-grid,.image-grid,.original-grid,.kaiju-gallery{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px;margin:0 auto;min-width:0}
+.gallery-grid>a,.gallery-grid>figure,.image-grid>a,.image-grid>figure,.original-grid>a,.original-grid>figure{margin:0;min-width:0}
+.gallery-item{display:flex;justify-content:center;align-items:center;flex:0 1 155px;width:155px;max-width:155px;padding:0;margin:0;border:1px solid #e5e7eb;border-radius:6px;background:#fff;text-decoration:none;overflow:hidden}
+.gallery-item img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;object-position:center;background:#fff}
+/* Original Drawing, including bare anchors and multiple full originals. */
+[data-role="original-drawing"] .gallery-grid,[data-role="original-drawings"] .gallery-grid,[data-role="original"] .gallery-grid,.primary-artwork{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px}
+[data-role="original-drawing"] .gallery-item,[data-role="original-drawings"] .gallery-item,[data-role="original"] .gallery-item,[data-role="original-drawing"] .gallery-grid>a,[data-role="original-drawings"] .gallery-grid>a,[data-role="original"] .gallery-grid>a,[data-role="original"] .gallery-item,.primary-artwork>a,.primary-artwork .gallery-item{display:flex;align-items:center;justify-content:center;flex:0 1 auto;width:auto;max-width:410px;height:auto;max-height:none;margin:0;padding:6px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;overflow:hidden}
+[data-role="original-drawing"] .gallery-grid img,[data-role="original-drawings"] .gallery-grid img,[data-role="original"] .gallery-grid img,.primary-artwork img,[data-role="original"] .gallery-grid img{display:block;width:auto;height:auto;max-width:100%;max-height:380px;object-fit:contain;object-position:center;background:#fff;padding:0}
+/* Digitized Versions: visibly framed 155 x 165px outer tiles, centered 12px gap. */
+[data-role="digital"] .gallery-grid,[data-role="digitized"] .gallery-grid,[data-role="digitized-versions"] .gallery-grid,[data-role="digital"] .image-grid,[data-role="digitized"] .image-grid{gap:12px;justify-content:center}
+[data-role="digital"] .gallery-item,[data-role="digitized"] .gallery-item,[data-role="digitized-versions"] .gallery-item,[data-role="digital"] .gallery-grid>a,[data-role="digitized"] .gallery-grid>a,[data-role="digital"] .image-grid>a,[data-role="digitized"] .image-grid>a{display:flex;align-items:center;justify-content:center;flex:0 0 155px;width:155px;max-width:155px;height:165px;min-height:165px;margin:0;padding:0;border:1px solid #e5e7eb;border-radius:6px;background:#fff;overflow:hidden}
+[data-role="digital"] .gallery-grid img,[data-role="digitized"] .gallery-grid img,[data-role="digitized-versions"] .gallery-grid img,[data-role="digital"] .image-grid img,[data-role="digitized"] .image-grid img{width:100%;height:100%;max-width:100%;max-height:100%;padding:0;object-fit:contain;object-position:center;background:#fff}
+/* Six compact documentary/card families; do not conflate catalogue category. */
+[data-role="cards"] .gallery-grid,[data-role="card"] .gallery-grid,[data-role="delusionville-trading-cards"] .gallery-grid,[data-role="delusionville-cards"] .gallery-grid,[data-role="wip"] .gallery-grid,[data-role="work-in-progress"] .gallery-grid,[data-role="photo-gallery"] .gallery-grid,[data-role="graphic-designs"] .gallery-grid,[data-role="area54-cards"] .gallery-grid,.ron-unified-notes-wip-panel:not([data-role]) .gallery-grid,[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .gallery-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px}
+[data-role="cards"] .gallery-item,[data-role="card"] .gallery-item,[data-role="delusionville-trading-cards"] .gallery-item,[data-role="delusionville-cards"] .gallery-item,[data-role="wip"] .gallery-item,[data-role="work-in-progress"] .gallery-item,[data-role="photo-gallery"] .gallery-item,[data-role="graphic-designs"] .gallery-item,[data-role="area54-cards"] .gallery-item,.ron-unified-notes-wip-panel:not([data-role]) .gallery-item,[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .gallery-item{display:flex;justify-content:center;align-items:center;flex:0 0 130px;width:130px;max-width:130px;height:170px;min-height:170px;margin:0;padding:0;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff;text-decoration:none}
+[data-role="cards"] .gallery-item img,[data-role="card"] .gallery-item img,[data-role="delusionville-trading-cards"] .gallery-item img,[data-role="delusionville-cards"] .gallery-item img,[data-role="wip"] .gallery-item img,[data-role="work-in-progress"] .gallery-item img,[data-role="photo-gallery"] .gallery-item img,[data-role="graphic-designs"] .gallery-item img,[data-role="area54-cards"] .gallery-item img,.ron-unified-notes-wip-panel:not([data-role]) .gallery-item img,[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .gallery-item img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;background:#fff}
+/* Documentary figure: caption remains separate beneath its framed image. */
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-items{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px;margin:0 auto}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item{flex:0 0 130px;width:130px;max-width:130px;min-width:0;margin:0;text-align:center}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item>a{display:flex;align-items:center;justify-content:center;width:130px;height:170px;max-width:130px;padding:0;border:1px solid #e5e7eb;border-radius:6px;background:#fff;overflow:hidden;text-decoration:none}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item>a img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;background:#fff}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] figcaption{margin:5px auto 0;font-size:12px;line-height:1.4;text-align:center;overflow-wrap:anywhere}
+/* Literature citations stay adjacent to their actual associated publication images. */
+[data-role="literature"] .literature-entry{max-width:520px;margin:0 auto 16px;text-align:center;line-height:1.65}
+[data-role="literature"] .literature-entry>p,[data-role="literature"] .literature-citation{max-width:520px;margin:8px auto;text-align:center}
+[data-role="literature"] .gallery-grid,[data-role="literature"] .image-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:0 auto}
+[data-role="literature"] .gallery-item,[data-role="literature"] .gallery-grid>a,[data-role="literature"] .image-grid>a{display:flex;align-items:center;justify-content:center;flex:0 1 155px;width:155px;max-width:155px;height:auto;min-height:0;margin:0;padding:6px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;overflow:hidden}
+[data-role="literature"] .gallery-grid img,[data-role="literature"] .image-grid img{display:block;width:100%;height:auto;max-width:100%;max-height:155px;object-fit:contain;background:#fff}
+.ron-unified-notes-wip-panel[style*="max-width:960px"]{max-width:560px!important}
+/* Preserve native video and verified compact YouTube cards. */
+[data-role="videos"] .video-gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+[data-role="videos"] .video-tile{flex:0 1 200px;width:200px;max-width:200px;margin:0;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+[data-role="videos"] .video-poster{height:125px;position:relative;display:flex;align-items:center;justify-content:center}
+[data-role="videos"] .video-poster img{width:100%;height:100%;object-fit:contain}
+[data-role="videos"] .video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%}
+[data-role="videos"] iframe,[data-role="videos"] video{max-width:100%;height:auto}
+/* Center notes, retaining every link and paragraph. */
+[data-role="notes"],[data-role="notes"] p,[data-role="notes"] .text-block,.notes-text,.text-block,.text-block p{text-align:center}
+.text-block{max-width:520px;margin:0 auto;line-height:1.65}
+.text-block p{margin:8px auto}
+footer{font-size:12px;color:#6b7280;text-align:center;margin:15px auto 5px;padding:12px 0 0;border-top:1px solid #e5e7eb}
+@media(max-width:600px){.wrap{padding:12px 10px 20px}.section-card,.section-block,.primary-artwork{padding:15px 11px}}
+@media(max-width:390px){[data-role="digital"] .gallery-item,[data-role="digitized"] .gallery-item,[data-role="digitized-versions"] .gallery-item,[data-role="digital"] .gallery-grid>a,[data-role="digitized"] .gallery-grid>a,[data-role="digital"] .image-grid>a,[data-role="digitized"] .image-grid>a{flex-basis:130px;width:130px;max-width:130px;height:165px}}
+
+</style></head><body><main class="wrap">
 <nav class="nav-pills" aria-label="Site navigation"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="../index.html">&larr; Brains</a>  <a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a>
 </nav>
 <header class="page-header"><h1 class="page-title">Brain Wave Surfer</h1></header><h2 class="original-drawing-heading">Original Drawing</h2><section class="section-card" data-role="original-drawing"><div class="gallery-grid original-grid"><a class="gallery-item" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/brain%20wave%20surfer%20ORIGINAL.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/brain%20wave%20surfer%20ORIGINAL.jpg" alt="Brain Wave Surfer Original Drawing" loading="lazy"></a></div></section><div class="catalogue-meta-block"><ul class="work-meta"><li><strong>Title:</strong> Brain Wave Surfer</li><li><strong>Medium:</strong> Ink on paper</li><li><strong>Dimensions:</strong> Unknown</li><li><strong>Work ID:</strong> RE-016319</li></ul></div><section class="section-card" data-role="digital"><h2>Digitized Versions</h2><div class="gallery-grid"><a class="gallery-item" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20B%26W.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20B%26W.jpg" alt="Brain Wave Surfer Digitized Versions" loading="lazy"></a><a class="gallery-item" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20COLOR.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/brains/Brain%20Wave%20Surfer%20COLOR.jpg" alt="Brain Wave Surfer Digitized Versions" loading="lazy"></a></div></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="../sets/brain-thinker.html">&larr; Previous: Brain Thinker</a><a class="nav-pill sequence-pill" href="re-013439-v.html">Next: Brainchild &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer></main></body></html>
