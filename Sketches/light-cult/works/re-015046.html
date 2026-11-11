@@ -85,6 +85,16 @@ footer{text-align:center;margin:28px auto 0;padding-top:16px;border-top:1px soli
 .section-card[data-role="original-drawing"]{text-align:center}
 @media(max-width:380px){[data-role="digital"] .image-grid>a{flex-basis:130px;width:130px;max-width:130px}}
 
+
+/* Original Drawing image-link inner frame removal: preserve the outer section, dimensions and other media. */
+.primary-artwork[data-role="original"] > a.primary-artwork-link,
+.primary-artwork[data-role="original-drawing"] > a.primary-artwork-link,
+.section-card[data-role="original-drawing"] .gallery-grid > a.gallery-item,
+.section-card[data-role="original-drawing"] .image-grid > a.gallery-item,
+.section-card[data-role="original-drawing"] .gallery-grid > a:has(> img),
+.section-card[data-role="original-drawing"] .image-grid > a:has(> img) {
+  border:0; border-radius:0; padding:0; box-shadow:none; overflow:visible;
+}
 </style>
 </head><body><main class="wrap">
 

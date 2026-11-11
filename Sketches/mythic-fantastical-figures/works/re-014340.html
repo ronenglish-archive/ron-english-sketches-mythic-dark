@@ -132,6 +132,16 @@ footer{font-size:12px;color:#6b7280;text-align:center;margin:15px auto 5px;paddi
 .metadata p{margin:5px auto;text-align:center}
 .section-card:not([data-role]) .image-grid{justify-content:center}
 @media(max-width:390px){[data-role="digitized"] .gallery-grid>a,[data-role="digitized"] .image-grid>a,[data-role="digital"] .image-grid>a{flex-basis:130px;width:130px;max-width:130px;height:165px}}
+
+/* Original Drawing image-link inner frame removal. Outer section and other galleries unchanged. */
+.section-card[data-role="original-drawing"] .gallery-grid a:has(> img),
+.section-card[data-role="original-drawing"] .original-grid a:has(> img),
+.section-card[data-role="original-drawings"] .gallery-grid a:has(> img),
+.section-card[data-role="original"] .gallery-grid a:has(> img),
+.primary-artwork[data-role="original"] > a:has(> img),
+.primary-artwork[data-role="original-drawing"] > a:has(> img) {
+  border:0; border-radius:0; padding:0; box-shadow:none; overflow:visible;
+}
 </style>
 
 <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">

@@ -15,6 +15,23 @@ body{margin:0;background:#fff;color:#111;font-family:system-ui,-apple-system,Seg
 .primary-artwork img{display:block;width:100%;max-width:900px;height:460px;object-fit:contain;background:#f3f4f6;border-radius:12px}
 footer{text-align:center;margin-top:30px;padding-top:16px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:14px}
 @media(max-width:700px){.wrap{padding:22px 14px 48px}.primary-artwork img{height:340px}}
+
+/* Catalogue local-only correction: inner Original Drawing frames only. Outer panels remain unchanged. */
+section[data-role="original-drawing"] a.gallery-item,
+section[data-role="original-drawing"] .original-grid > a,
+section[data-role="original"] a.gallery-item,
+.primary-artwork[data-role="original"] > a.primary-artwork-link {
+  border:0 !important; border-radius:0 !important; box-shadow:none !important;
+  outline:0 !important; background:transparent !important; padding:0 !important;
+  overflow:visible !important;
+}
+section[data-role="original-drawing"] a.gallery-item > img,
+section[data-role="original-drawing"] .original-grid > a > img,
+section[data-role="original"] a.gallery-item > img,
+.primary-artwork[data-role="original"] > a.primary-artwork-link > img {
+  border:0 !important; border-radius:0 !important; box-shadow:none !important;
+  outline:0 !important; background:transparent !important; padding:0 !important;
+}
 </style><style id="ron-bottom-prev-next-center-v1">nav.ron-bottom-prev-next-center{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:12px!important;text-align:center!important}</style><style id="ron-detail-outer-card-width-standard-v1">
 .primary-artwork{
   width:100%!important;
