@@ -35,6 +35,17 @@ body{margin:0;background:#fff;color:#111;font-family:system-ui,-apple-system,"Se
 footer{text-align:center;margin:30px auto 0;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:14px}
 footer a{color:inherit}
 @media(max-width:480px){.wrap{width:calc(100% - 24px)}.section-card{padding:14px}.index-grid,.group-grid{gap:12px}.index-grid>.index-card,.group-grid>.group-card{flex:0 1 145px;max-width:145px;width:145px}.index-grid>.index-card>img,.group-grid>.group-card>img,.index-grid .index-image{height:140px}.index-grid .card-title,.index-grid .index-title,.group-grid .label,.group-grid .card-title{font-size:13px}}
+
+/* Owner-approved set artwork-card geometry, 2026-11-11. */
+main.wrap > section.section-card:first-of-type{width:100%;max-width:560px;box-sizing:border-box;margin-left:auto;margin-right:auto}
+main.wrap > section.section-card:first-of-type .index-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px}
+main.wrap > section.section-card:first-of-type .index-grid > .index-card{box-sizing:border-box;display:flex;flex:0 0 200px;width:200px;max-width:200px;min-width:0;height:200px;min-height:200px;max-height:200px;flex-direction:column;overflow:hidden}
+main.wrap > section.section-card:first-of-type .index-grid > .index-card > img{box-sizing:border-box;display:block;flex:1 1 0;min-height:0;height:0;width:100%;max-width:100%;object-fit:contain;object-position:center}
+main.wrap > section.section-card:first-of-type .index-grid > .index-card > .index-image{box-sizing:border-box;display:flex;flex:1 1 0;min-height:0;height:auto;width:100%;align-items:center;justify-content:center;overflow:hidden}
+main.wrap > section.section-card:first-of-type .index-grid > .index-card > .index-image img{display:block;width:100%;height:100%;max-height:100%;max-width:100%;object-fit:contain;object-position:center}
+main.wrap > section.section-card:first-of-type .index-grid > .index-card > .card-title,
+main.wrap > section.section-card:first-of-type .index-grid > .index-card > .index-title{box-sizing:border-box;flex:0 0 auto;margin:0;padding:7px 6px 8px;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+@media(max-width:260px){main.wrap > section.section-card:first-of-type .index-grid > .index-card{flex:0 1 100%;width:100%;max-width:200px;aspect-ratio:1/1;height:auto;min-height:0;max-height:none}}
 </style>
 <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
 </head>
