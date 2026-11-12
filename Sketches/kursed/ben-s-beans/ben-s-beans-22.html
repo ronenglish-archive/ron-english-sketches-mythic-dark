@@ -99,6 +99,45 @@ section[data-role="original"] a.gallery-item > img,
   outline:0 !important; background:transparent !important; padding:0 !important;
 }
 </style>
+<style id="kursed-approved-v2-review">
+/* KURSED 83 — owner-approved working V2 presentation pilot, read-only review. */
+.wrap{width:100%;max-width:620px;margin-left:auto;margin-right:auto}
+.section-card,.primary-artwork[data-role="original"],section[data-role="original-drawing"]{max-width:560px;box-shadow:none}
+.page-title,.page-header h1{font-family:Georgia,serif;font-size:28px;text-align:center}
+.section-card h2,.original-drawing-heading{font-family:Georgia,serif;font-size:20px;text-align:center}
+.catalogue-meta-block,.work-meta,.work-meta li{text-align:center;list-style:none}
+.work-meta{padding-left:0}.work-meta li::marker{content:""}
+/* Original image: remove only the tight inner frame, not its outer panel. */
+.primary-artwork[data-role="original"] > .primary-artwork-link,
+section[data-role="original-drawing"] a.gallery-item,
+section[data-role="original-drawing"] .original-grid > a,
+section[data-role="original"] a.gallery-item{border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;background:transparent!important;padding:0!important;overflow:visible!important}
+.primary-artwork[data-role="original"] > .primary-artwork-link img,
+section[data-role="original-drawing"] a.gallery-item img,
+section[data-role="original-drawing"] .original-grid > a img{border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;background:transparent!important;object-fit:contain!important}
+/* Approved square digitized media; no captions. */
+[data-role="digital"] .gallery-grid,[data-role="digitized-versions"] .gallery-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a{box-sizing:border-box;display:block;flex:0 0 200px;width:200px;max-width:200px;height:200px;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;padding:0;margin:0;background:#fff;box-shadow:none}
+[data-role="digital"] .gallery-grid>a img,[data-role="digitized-versions"] .gallery-grid>a img{display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center;padding:0;background:#fff}
+[data-role="digital"] .gallery-grid figcaption,[data-role="digitized-versions"] .gallery-grid figcaption{display:none}
+/* Shared original sheet: dedicated panel at its existing position. */
+.relationship-note{box-sizing:border-box;width:100%;max-width:560px;margin:0 auto 18px;padding:19px 16px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:12px;box-shadow:none;text-align:center}
+/* Documentary media whose dimensions are explicitly approved. */
+[data-role="photo-gallery"] .gallery-grid>a,[data-role="artist-colored-copy"] .gallery-grid>a{flex:0 0 200px;width:200px;max-width:200px;height:200px;border-radius:10px;overflow:hidden}
+[data-role="photo-gallery"] .gallery-grid>a img,[data-role="artist-colored-copy"] .gallery-grid>a img{width:100%;height:100%;object-fit:contain}
+[data-role="photo-gallery"] figcaption{display:none}
+[data-role="literature"] .literature-entry,[data-role="literature"] .literature-entry p,[data-role="literature"] .text-block{text-align:center}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item,
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item{flex:0 1 200px;width:auto;max-width:200px}
+[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item img{width:100%!important;max-width:100%!important;height:auto!important;max-height:200px!important;object-fit:contain!important}
+[data-role="videos"] .ron-yt-clean-tile{flex:0 1 200px;width:200px;max-width:200px}
+[data-role="videos"] .ron-video-poster{height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/9}
+[data-role="videos"] .ron-video-poster span[aria-hidden="true"]{width:28px!important;height:28px!important;font-size:14px!important}
+[data-role="videos"] .ron-yt-clean-tile figcaption{display:none}
+.sequence-nav{justify-content:center;text-align:center}
+footer{border-top:1px solid #e5e7eb}
+@media(max-width:460px){[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a,[data-role="photo-gallery"] .gallery-grid>a{flex:0 1 min(200px,44vw);width:min(200px,44vw);height:auto;aspect-ratio:1/1}}
+</style>
 </head>
 <body><main class="wrap"><nav class="nav-pills" aria-label="Site navigation"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="index.html">&larr; Ben&#39;s Beans</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a></nav><header class="page-header"><h1 class="page-title">Ben&#x27;s Beans 16</h1></header><h2 class="original-drawing-heading">Original Drawing</h2><section class="primary-artwork" data-role="original"><a class="primary-artwork-link" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Ben&#x27;s%20Beans%2010.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Ben&#x27;s%20Beans%2010.jpg" alt="" loading="lazy"></a></section><div class="catalogue-meta-block"><ul class="work-meta"><li><strong>Title:</strong> Ben&#x27;s Beans 16</li><li><strong>Medium:</strong> Ink on paper</li><li><strong>Dimensions:</strong> Sheet 11 × 14 in.</li><li><strong>Work ID:</strong> RE-013047</li><li><strong>Signature:</strong> Signed “ENGLISH” lower right</li><li><strong>Provenance:</strong> Artist's Personal Collection</li></ul></div><section class="section-card ron-notes-center" data-role="notes"><h2>Notes</h2><p class="notes-text">Signature not visible in the available image.</p></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="ben-s-beans-19.html">&larr; Previous: Ben&#39;s Beans 15</a><a class="nav-pill sequence-pill" href="ben-s-beans-20.html">Next: Ben&#39;s Beans 17 &rarr;</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer>
 </main></body></html>
