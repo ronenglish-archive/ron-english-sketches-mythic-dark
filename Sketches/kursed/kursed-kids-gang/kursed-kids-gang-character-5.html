@@ -8,136 +8,37 @@
 
 
 
-
 <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
 
 
 <style>
-/* KURSED drawing detail pages — approved Nov 8 media / V3 typography. */
-*{box-sizing:border-box}
-:root{--border:#e5e7eb;--muted:#6b7280}
-html,body{margin:0;background:#fff;color:#111}
-body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.6}
-.wrap{width:100%;max-width:620px;margin:0 auto;padding:22px 15px 48px}
-.nav-pills,.sequence-nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:18px auto;text-align:center}
-.nav-pill{display:inline-block;padding:8px 13px;background:#fff;color:#111;text-decoration:none;font-size:13px;border:1px solid var(--border);border-radius:999px}
-.nav-pill:hover{background:#f8fafc}
-.page-header,.page-header h1,.wrap>header h1,.wrap>h1,.page-title{text-align:center}
-.page-header{margin:12px auto 20px}
-.page-title,.page-header h1,.wrap>header h1,.wrap>h1{margin:0;font-family:Georgia,serif;font-size:28px;line-height:1.2}
-.section-card,.section-block.ron-unified-notes-wip-panel{width:100%;max-width:560px;margin:0 auto 18px;padding:19px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:none}
-.section-card h2,.section-block.ron-unified-notes-wip-panel h2,.original-drawing-heading{font-family:Georgia,serif;font-size:20px;text-align:center;line-height:1.3;margin:0 auto 14px}
-.original-drawing-heading{margin:0 auto 11px}
-.gallery-grid,.index-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px}
-.gallery-item,.index-card{display:block;min-width:0;color:inherit;text-decoration:none;border:1px solid var(--border);background:#fff;border-radius:12px;overflow:hidden}
-.gallery-item img,.index-card img{display:block;width:100%;object-fit:contain;object-position:center;background:#fff}
-/* Two observed original-drawing DOM forms; preserve all original artwork links. */
-.primary-artwork[data-role="original"]{width:100%;max-width:560px;margin:0 auto 18px;padding:19px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;text-align:center;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px}
-.primary-artwork[data-role="original"]>.primary-artwork-link{display:block;flex:0 1 410px;width:100%;max-width:410px;min-width:0;margin:0 auto;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
-.primary-artwork[data-role="original"]>.primary-artwork-link img{display:block;width:100%;height:auto;max-height:380px;object-fit:contain;object-position:center;background:#fff}
-[data-role="original-drawing"] .gallery-grid>a{display:block;min-width:0;width:100%;max-width:410px;flex:0 1 410px;margin-left:auto;margin-right:auto}
-[data-role="original-drawing"] .gallery-grid>a img{display:block;width:100%;height:auto;max-height:380px;object-fit:contain;object-position:center}
-.catalogue-meta-block,.relationship-note,.notes-block,.text-block{max-width:520px;margin-left:auto;margin-right:auto;text-align:center;line-height:1.6}
-.catalogue-meta-block{margin-bottom:18px}
-.relationship-note{width:100%;max-width:520px;margin:14px auto 18px;padding:14px 16px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:10px;text-align:center}
-.work-meta{margin:0 auto;padding:0;list-style:none;line-height:1.65;text-align:center}
-.work-meta li{list-style:none;display:block;margin:2px auto;padding:0}
-.work-meta li::marker{content:""}
-.section-card .text-block p{margin:.4rem auto}
-.section-card .gallery-grid{justify-content:center;gap:12px}
-/* Digitized Versions: exact bordered outer frames; 155x165 desktop / 130x165 narrow. */
-[data-role="digital"] .gallery-grid,[data-role="digitized-versions"] .gallery-grid{gap:12px;justify-content:center;align-items:flex-start}
-[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a{box-sizing:border-box;display:block;flex:0 0 155px;width:155px;max-width:155px;height:165px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;box-shadow:none;padding:0;margin:0}
-[data-role="digital"] .gallery-grid>a img,[data-role="digitized-versions"] .gallery-grid>a img{display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center;background:#fff;padding:0;margin:0}
-/* Cards / graphic designs / documentary media are separate from Digitized Versions. */
-[data-role="area54-cards"] .gallery-grid,[data-role="delusionville-trading-cards"] .gallery-grid,[data-role="delusionville-cards"] .gallery-grid,[data-role="cards"] .gallery-grid,[data-role="graphic-designs"] .gallery-grid,[data-role="graphic-design"] .gallery-grid,[data-role="work-in-progress"] .gallery-grid,[data-role="photo-gallery"] .gallery-grid{justify-content:center;gap:12px}
-[data-role="area54-cards"] .gallery-grid>a,[data-role="delusionville-trading-cards"] .gallery-grid>a,[data-role="delusionville-cards"] .gallery-grid>a,[data-role="cards"] .gallery-grid>a,[data-role="graphic-designs"] .gallery-grid>a,[data-role="graphic-design"] .gallery-grid>a,[data-role="work-in-progress"] .gallery-grid>a,[data-role="photo-gallery"] .gallery-grid>a{display:block;width:130px;max-width:130px;flex:0 0 130px;background:#fff;box-shadow:none}
-[data-role="area54-cards"] .gallery-grid>a img,[data-role="delusionville-trading-cards"] .gallery-grid>a img,[data-role="delusionville-cards"] .gallery-grid>a img,[data-role="cards"] .gallery-grid>a img,[data-role="graphic-designs"] .gallery-grid>a img,[data-role="graphic-design"] .gallery-grid>a img,[data-role="work-in-progress"] .gallery-grid>a img,[data-role="photo-gallery"] .gallery-grid>a img{display:block;width:100%;height:170px;object-fit:contain;object-position:center;background:#fff;padding:0}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-items{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:12px}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item{box-sizing:border-box;display:block;flex:0 0 130px;width:130px;max-width:130px;margin:0;text-align:center}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item{display:block;width:130px;max-width:130px}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item img{display:block!important;width:100%!important;max-width:100%!important;height:170px!important;max-height:170px!important;object-fit:contain!important;object-position:center!important;background:#fff!important;margin:0!important}
-.section-card.ron-unified-notes-wip-panel .gallery-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.section-card.ron-unified-notes-wip-panel .gallery-grid>a{width:130px;max-width:130px;flex:0 0 130px}
-.section-card.ron-unified-notes-wip-panel .gallery-grid>a img{display:block;width:100%;height:170px;object-fit:contain;object-position:center;background:#fff}
-/* Literature citation/images remain grouped within their own entry. */
-[data-role="literature"] .gallery-grid{gap:12px;justify-content:center}
-[data-role="literature"] .literature-entry{max-width:520px;margin:0 auto 16px;text-align:center;line-height:1.65}
-[data-role="literature"] .literature-entry p{margin:8px auto}
-[data-role="literature"] .gallery-grid>a{width:155px;max-width:155px;flex:0 0 155px;padding:6px}
-[data-role="literature"] .gallery-grid>a img{width:100%;height:auto;max-height:155px;object-fit:contain;background:#fff}
-/* Native iframe/video functionality untouched; YouTube poster cards follow Brain Halves sizing. */
-[data-role="videos"] .ron-yt-clean-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:12px}
-[data-role="videos"] .ron-yt-clean-tile{display:block;position:relative;flex:0 0 200px;width:200px;max-width:200px;margin:0;text-align:center}
-[data-role="videos"] .ron-video-poster{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:125px!important;min-height:125px!important;max-height:125px!important;overflow:hidden!important;background:#fff!important;border:1px solid var(--border);border-radius:10px!important}
-[data-role="videos"] .ron-video-poster img{display:block!important;width:100%!important;max-width:100%!important;height:100%!important;object-fit:contain!important;background:#fff!important}
-[data-role="videos"] .ron-video-poster span[aria-hidden="true"]{position:absolute!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;width:44px!important;height:44px!important;padding:0!important;border-radius:50%!important;font-size:22px!important;line-height:1!important;background:rgba(0,0,0,.8)!important;color:white!important}
-[data-role="videos"] .ron-yt-clean-tile figcaption{margin-top:7px;font-size:12px;line-height:1.4}
-[data-role="videos"] .ron-yt-clean-tile figcaption a{color:#111}
-[data-role="videos"] video,[data-role="videos"] iframe{max-width:100%;height:auto}
-/* Notes are centered even when original section is roleless. */
-.section-card.ron-notes-center,.section-card.ron-notes-center p,.section-card.ron-notes-center .text-block,[data-role="notes"],[data-role="notes"] p,.notes-text,.section-card.ron-unified-notes-wip-panel:not(:has(.gallery-grid)){text-align:center}
-.gallery-caption,.image-caption,.media-caption,figcaption{font-size:12px}
-footer{text-align:center;margin:28px auto 0;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
-@media(max-width:380px){.wrap{padding:18px 10px 42px}.section-card{padding:14px 10px}[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a{flex-basis:130px;width:130px;max-width:130px}}
-
-
-/* Catalogue local-only correction: inner Original Drawing frames only. Outer panels remain unchanged. */
-section[data-role="original-drawing"] a.gallery-item,
-section[data-role="original-drawing"] .original-grid > a,
-section[data-role="original"] a.gallery-item,
-.primary-artwork[data-role="original"] > a.primary-artwork-link {
-  border:0 !important; border-radius:0 !important; box-shadow:none !important;
-  outline:0 !important; background:transparent !important; padding:0 !important;
-  overflow:visible !important;
-}
-section[data-role="original-drawing"] a.gallery-item > img,
-section[data-role="original-drawing"] .original-grid > a > img,
-section[data-role="original"] a.gallery-item > img,
-.primary-artwork[data-role="original"] > a.primary-artwork-link > img {
-  border:0 !important; border-radius:0 !important; box-shadow:none !important;
-  outline:0 !important; background:transparent !important; padding:0 !important;
-}
+/* Kursed Kids Gang character detail: consolidated clean stylesheet. */
+:root { --ink:#222; --border:#e1e3e6; --muted:#64748b; }
+* { box-sizing:border-box; }
+html,body { margin:0; background:#fff; color:var(--ink); }
+body { font:14px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+a { color:#164f9e; }
+a:focus-visible { outline:3px solid #2463bc; outline-offset:3px; }
+.wrap { width:100%; max-width:620px; margin:0 auto; padding:16px 14px 26px; }
+.nav-pills,.sequence-nav { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:9px; margin:8px auto 14px; text-align:center; }
+.nav-pill { display:inline-block; padding:6px 11px; border:1px solid #e5e7eb; border-radius:999px; color:#333; font-size:12px; text-decoration:none; }
+.page-header { text-align:center; }
+.page-title { margin:12px auto 16px; font:700 28px/1.2 Georgia,"Times New Roman",serif; text-align:center; overflow-wrap:anywhere; }
+.original-drawing-heading { margin:18px auto 14px; font:400 20px/1.3 Georgia,"Times New Roman",serif; text-align:center; }
+.primary-artwork[data-role="original"] { display:flex; flex-direction:column; align-items:center; gap:12px; width:100%; max-width:560px; margin:0 auto 18px; padding:19px 16px; background:#fff; border:1px solid var(--border); border-radius:12px; box-shadow:none; }
+.primary-artwork[data-role="original"] > .primary-artwork-link { display:flex; align-items:center; justify-content:center; width:100%; max-width:410px; margin:0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; text-decoration:none; }
+.primary-artwork[data-role="original"] > .primary-artwork-link > img { display:block; width:auto; height:auto; max-width:100%; max-height:380px; object-fit:contain; border:0; border-radius:0; background:transparent; box-shadow:none; }
+.catalogue-meta-block { max-width:560px; margin:0 auto 18px; text-align:center; }
+.work-meta { padding:0; margin:0; list-style:none; text-align:center; }
+.work-meta li { margin:3px 0; padding:0; list-style:none; text-align:center; }
+.section-card.shared-original-sheet { width:100%; max-width:560px; margin:0 auto 18px; padding:19px 16px; border:1px solid var(--border); border-radius:12px; background:#f3f4f5; box-shadow:none; text-align:center; }
+.shared-original-sheet p { margin:0; line-height:1.6; }
+footer { margin:18px auto 16px; padding-top:16px; border-top:1px solid #e5e7eb; color:var(--muted); font-size:14px; text-align:center; }
+@media(max-width:440px) { .wrap { padding:12px 10px 22px; } .primary-artwork[data-role="original"],.section-card.shared-original-sheet { padding:18px 12px; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto; transition:none; } }
 </style>
-<style id="kursed-approved-v2-review">
-/* KURSED 83 — owner-approved working V2 presentation pilot, read-only review. */
-.wrap{width:100%;max-width:620px;margin-left:auto;margin-right:auto}
-.section-card,.primary-artwork[data-role="original"],section[data-role="original-drawing"]{max-width:560px;box-shadow:none}
-.page-title,.page-header h1{font-family:Georgia,serif;font-size:28px;text-align:center;font-weight:700}
-.section-card h2,.original-drawing-heading{font-family:Georgia,serif;font-size:20px;text-align:center;font-weight:400}
-.catalogue-meta-block,.work-meta,.work-meta li{text-align:center;list-style:none}
-.work-meta{padding-left:0}.work-meta li::marker{content:""}
-/* Original image: remove only the tight inner frame, not its outer panel. */
-.primary-artwork[data-role="original"] > .primary-artwork-link,
-section[data-role="original-drawing"] a.gallery-item,
-section[data-role="original-drawing"] .original-grid > a,
-section[data-role="original"] a.gallery-item{border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;background:transparent!important;padding:0!important;overflow:visible!important}
-.primary-artwork[data-role="original"] > .primary-artwork-link img,
-section[data-role="original-drawing"] a.gallery-item img,
-section[data-role="original-drawing"] .original-grid > a img{border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;background:transparent!important;object-fit:contain!important}
-/* Approved square digitized media; no captions. */
-[data-role="digital"] .gallery-grid,[data-role="digitized-versions"] .gallery-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a{box-sizing:border-box;display:block;flex:0 0 200px;width:200px;max-width:200px;height:200px;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;padding:0;margin:0;background:#fff;box-shadow:none}
-[data-role="digital"] .gallery-grid>a img,[data-role="digitized-versions"] .gallery-grid>a img{display:block;width:100%;height:100%;max-height:none;object-fit:contain;object-position:center;padding:0;background:#fff}
-[data-role="digital"] .gallery-grid figcaption,[data-role="digitized-versions"] .gallery-grid figcaption{display:none}
-/* Shared original sheet: dedicated panel at its existing position. */
-.relationship-note{box-sizing:border-box;width:100%;max-width:560px;margin:0 auto 18px;padding:19px 16px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:12px;box-shadow:none;text-align:center}
-/* Documentary media whose dimensions are explicitly approved. */
-[data-role="photo-gallery"] .gallery-grid>a,[data-role="artist-colored-copy"] .gallery-grid>a{flex:0 0 200px;width:200px;max-width:200px;height:200px;border-radius:10px;overflow:hidden}
-[data-role="photo-gallery"] .gallery-grid>a img,[data-role="artist-colored-copy"] .gallery-grid>a img{width:100%;height:100%;object-fit:contain}
-[data-role="photo-gallery"] figcaption{display:none}
-[data-role="literature"] .literature-entry,[data-role="literature"] .literature-entry p,[data-role="literature"] .text-block{text-align:center}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item,
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item{flex:0 1 200px;width:auto;max-width:200px}
-[data-role="ancillary-documentation"][data-category="artist-created-graphic-designs"] .ron-doc-category-item .gallery-item img{width:100%!important;max-width:100%!important;height:auto!important;max-height:200px!important;object-fit:contain!important}
-[data-role="videos"] .ron-yt-clean-tile{flex:0 1 200px;width:200px;max-width:200px}
-[data-role="videos"] .ron-video-poster{height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/9}
-[data-role="videos"] .ron-video-poster span[aria-hidden="true"]{width:28px!important;height:28px!important;font-size:14px!important}
-[data-role="videos"] .ron-yt-clean-tile figcaption{display:none}
-.sequence-nav{justify-content:center;text-align:center}
-footer{border-top:1px solid #e5e7eb}
-@media(max-width:460px){[data-role="digital"] .gallery-grid>a,[data-role="digitized-versions"] .gallery-grid>a,[data-role="photo-gallery"] .gallery-grid>a{flex:0 1 min(200px,44vw);width:min(200px,44vw);height:auto;aspect-ratio:1/1}}
-</style>
+
 </head>
-<body><main class="wrap"><nav class="nav-pills" aria-label="Site navigation"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="index.html">&larr; Kursed Kids Gang</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a></nav><header class="page-header"><h1 class="page-title">Kursed Kids Gang Character 5</h1></header><h2 class="original-drawing-heading">Original Drawing</h2><section class="primary-artwork" data-role="original"><a class="primary-artwork-link" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Kursed%20Kids%20Gang%204%20ORIGINAL.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Kursed%20Kids%20Gang%204%20ORIGINAL.jpg" alt="" loading="lazy"></a></section><div class="catalogue-meta-block"><ul class="work-meta"><li><strong>Title:</strong> Kursed Kids Gang Character 5</li><li><strong>Medium:</strong> Ink on paper</li><li><strong>Dimensions:</strong> Unknown</li><li><strong>Work ID:</strong> RE-016904</li></ul></div><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="kursed-kids-gang-character-4.html">&larr; Previous: Kursed Kids Gang Character 4</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer>
+<body><main class="wrap"><nav class="nav-pills" aria-label="Site navigation"><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/">Catalogue home</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-sketches-and-drawings/Sketches/">Sketches &amp; Drawings</a><a class="nav-pill" href="index.html">&larr; Kursed Kids Gang</a><a class="nav-pill" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/search/">Search Catalogue</a></nav><header class="page-header"><h1 class="page-title">Kursed Kids Gang Character 5</h1></header><h2 class="original-drawing-heading">Original Drawing</h2><section class="primary-artwork" data-role="original"><a class="primary-artwork-link" href="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/kursedkidscartoon.jpg" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/ronenglish-archive/ron-english-sketches-and-drawings-6/main/kursedkidscartoon.jpg" alt="Complete original sheet containing the five Kursed Kids Gang character drawings" loading="lazy"></a><a class="primary-artwork-link" href="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Kursed%20Kids%20Gang%204%20ORIGINAL.jpg" target="_blank" rel="noopener"><img src="https://ronenglish-archive.github.io/ron-english-sketches-mythic-dark/images/Sketches/Kursed/Kursed%20Kids%20Gang%204%20ORIGINAL.jpg" alt="" loading="lazy"></a></section><div class="catalogue-meta-block"><ul class="work-meta"><li><strong>Title:</strong> Kursed Kids Gang Character 5</li><li><strong>Medium:</strong> Ink on paper</li><li><strong>Dimensions:</strong> Unknown</li><li><strong>Work ID:</strong> RE-016361</li></ul></div>
+<section class="section-card shared-original-sheet" aria-label="Shared original sheet"><p><strong>Shared original sheet.</strong> This drawing appears on the same physical sheet as <a href="kursed-kids-gang-character-1.html">Kursed Kids Gang Character 1</a>, <a href="kursed-kids-gang-character-2.html">Kursed Kids Gang Character 2</a>, <a href="kursed-kids-gang-character-3.html">Kursed Kids Gang Character 3</a>, and <a href="kursed-kids-gang-character-4.html">Kursed Kids Gang Character 4</a>.</p></section><nav class="sequence-nav ron-bottom-prev-next-center" aria-label="Catalogue sequence"><a class="nav-pill sequence-pill" href="kursed-kids-gang-character-4.html">&larr; Previous: Kursed Kids Gang Character 4</a></nav><footer>Published via GitHub Pages<br>for long-term public access.</footer>
 </main></body></html>
