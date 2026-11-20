@@ -67,28 +67,12 @@
 
     /* Three compact category cards; incomplete rows remain centered. */
     .index-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: stretch;
-      gap: 16px;
-      margin: 0 auto;
+      
+      display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start; gap:24px; max-width:852px; margin:0 auto;
     }
     .index-card {
-      display: flex;
-      flex: 0 0 200px;
-      width: 200px;
-      max-width: 200px;
-      min-width: 0;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: #fff;
-      color: inherit;
-      text-decoration: none;
-      text-align: center;
-      box-shadow: 0 3px 12px #0000000b;
+      
+      display:block; flex:0 1 268px; width:268px; max-width:268px; min-width:0; color:inherit; text-decoration:none; text-align:center; border:0; border-radius:0; background:transparent; box-shadow:none; overflow:visible;
     }
     .index-card:hover {
       border-color: #c9ced5;
@@ -133,7 +117,13 @@
       .index-image { height: 140px; }
       .card-title { font-size: 13px; }
     }
-  </style>
+  
+/* Approved comparison proposal: match Aliens category gateway card geometry (268 x 201 image). */
+.index-grid .index-image {width:100%;height:auto;aspect-ratio:4/3;padding:0;border:1px solid #d8d8d8;border-radius:0;background:#fafafa;overflow:hidden;}
+.index-grid .index-image img {width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.index-grid .card-title {margin-top:14px;padding:0;font:400 22px/1.35 Georgia,"Times New Roman",serif;}
+@media(max-width:480px){.index-grid{gap:24px}.index-grid .index-card{flex:0 1 268px;width:min(268px,100%);max-width:268px}.index-grid .index-image{height:auto;aspect-ratio:4/3}}
+</style>
   <link rel="icon" type="image/png" href="https://ronenglish-archive.github.io/ron-english-catalogue-raisonne/favicon.png">
 </head>
 <body>
